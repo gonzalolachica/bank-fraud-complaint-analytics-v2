@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_complaints_clean
+    description: "Cleaned copy of public.stg_complaints_raw (one row per CFPB complaint)."
+    columns:
+      - name: complaint_id
+        description: "CFPB complaint ID — the grain of the table."
+        data_tests:
+          - unique
+          - not_null

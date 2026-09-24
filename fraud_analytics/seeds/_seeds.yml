@@ -1,0 +1,28 @@
+version: 2
+
+seeds:
+  - name: dim_company
+    description: "The three benchmarked companies (hand-maintained seed)."
+    columns:
+      - name: company_key
+        description: "Primary key."
+        data_tests:
+          - unique
+          - not_null
+      - name: company_name
+        description: "Natural key — fct_complaints joins on this, so it must be unique."
+        data_tests:
+          - unique
+
+  - name: dim_product
+    description: "CFPB product -> product_group mapping (hand-maintained seed)."
+    columns:
+      - name: product_key
+        description: "Primary key."
+        data_tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Natural key — fct_complaints joins on this, so it must be unique."
+        data_tests:
+          - unique

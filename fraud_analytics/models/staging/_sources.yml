@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: public
+    tables:
+      - name: stg_complaints_raw
+      - name: stg_complaints_clean
+      - name: fact_complaints
+      - name: dim_company
+      - name: dim_date
+      - name: dim_product
+      - name: dim_issue
+      - name: dim_geography

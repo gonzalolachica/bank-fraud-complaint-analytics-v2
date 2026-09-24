@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: fct_complaints
+    description: "Fact table: one row per complaint, with keys to each dimension and the is_fraud_complaint flag."
+    columns:
+      - name: complaint_id
+        description: "CFPB complaint ID — the grain of the table."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: date_key
+        description: "YYYYMMDD integer key to dim_date."
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: company_key
+        description: "Key to dim_company (seed)."
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_company')
+                field: company_key
+
+      - name: product_key
+        description: "Key to dim_product (seed)."
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_key
+
+      - name: issue_key
+        description: "Key to dim_issue (issue / sub-issue pair)."
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_issue')
+                field: issue_key
+
+      - name: geography_key
+        description: "Key to dim_geography (state; missing state maps to UNK)."
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_geography')
+                field: geography_key
+
+  - name: dim_date
+    description: "One row per calendar day, 2020-01-01 to 2026-12-31."
+    columns:
+      - name: date_key
+        description: "Primary key, YYYYMMDD integer."
+        data_tests:
+          - unique
+          - not_null
+      - name: full_date
+        data_tests:
+          - unique
+
+  - name: dim_issue
+    description: "One row per distinct issue / sub-issue pair, with the is_fraud_related flag from the allow-list seed."
+    columns:
+      - name: issue_key
+        description: "Primary key (surrogate)."
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_geography
+    description: "One row per state code (plus UNK for missing state)."
+    columns:
+      - name: geography_key
+        description: "Primary key (surrogate)."
+        data_tests:
+          - unique
+          - not_null
+      - name: state_code
+        description: "Natural key — fct_complaints joins on this, so it must be unique."
+        data_tests:
+          - unique

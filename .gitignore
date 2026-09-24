@@ -1,0 +1,21 @@
+# Python virtual environment (recreate with: python -m venv venv + pip install)
+venv/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# dbt generated files
+fraud_analytics/target/
+fraud_analytics/dbt_packages/
+logs/
+fraud_analytics/logs/
+
+# Secrets (never commit)
+.env
+*.pem
+profiles.yml
+
+# Editor / OS
+.vscode/
+Thumbs.db

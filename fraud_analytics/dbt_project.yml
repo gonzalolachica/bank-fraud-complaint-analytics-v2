@@ -1,0 +1,27 @@
+name: 'fraud_analytics'
+version: '1.0.0'
+
+profile: 'fraud_analytics'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# All models build as views in the `analytics` schema (set in profiles.yml).
+# Override per model with {{ config(materialized='table') }} when needed (e.g. for Power BI).
+models:
+  fraud_analytics:
+    staging:
+      +materialized: view   # cleaned copy of the raw CFPB source
+    marts:
+      core:
+        +materialized: view # star schema: dims + fct_complaints
+      analysis:
+        +materialized: view # analysis outputs (ported from SQL scripts 11-17)

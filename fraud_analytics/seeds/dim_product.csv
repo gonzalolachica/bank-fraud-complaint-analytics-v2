@@ -1,0 +1,15 @@
+product_key,product_name,product_group
+1,Checking or savings account,Checking or Savings Account
+2,Credit card,Credit Card / Prepaid Card
+3,Credit card or prepaid card,Credit Card / Prepaid Card
+4,Prepaid card,Credit Card / Prepaid Card
+5,Credit reporting or other personal consumer reports,Credit Reporting
+6,"Credit reporting, credit repair services, or other personal consumer reports",Credit Reporting
+7,Debt collection,Debt Collection
+8,"Money transfer, virtual currency, or money service",Money Transfer / Virtual Currency
+9,Mortgage,Mortgage
+10,Vehicle loan or lease,Vehicle Loan or Lease
+11,"Payday loan, title loan, personal loan, or advance loan",Payday / Title / Personal Loan
+12,"Payday loan, title loan, or personal loan",Payday / Title / Personal Loan
+13,Debt or credit management,Debt or Credit Management
+14,Student loan,Student Loan
