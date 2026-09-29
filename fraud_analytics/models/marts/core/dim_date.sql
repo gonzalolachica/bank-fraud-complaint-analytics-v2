@@ -1,9 +1,13 @@
--- Calendar dimension: one row per day, 2020-01-01 to 2026-12-31.
--- Ported exactly from the Supabase version of script 06.
--- Known quirks (to fix later, deliberately):
---   1. TO_CHAR 'Month'/'Day' pad names with trailing spaces -> use 'FMMonth'/'FMDay'
---   2. Hard-coded end date -> 2027+ complaints would drop out of inner joins
--- day_of_week follows Postgres DOW: Sunday = 0 ... Saturday = 6
+-- End date = Dec 31 of the year of the latest complaint, so new years extend the table automatically.
+-- COALESCE keeps a sensible end date if the source is ever empty.
+WITH bounds AS (
+    SELECT
+        COALESCE(
+            (DATE_TRUNC('year', MAX(date_received)) + INTERVAL '1 year - 1 day')::date,
+            '2026-12-31'::date
+        ) AS end_date
+    FROM {{ ref('stg_complaints_clean') }}
+)
 
 SELECT
     EXTRACT(YEAR FROM d)::int * 10000
@@ -18,4 +22,5 @@ SELECT
     EXTRACT(DOW FROM d)::int                                        AS day_of_week,
     TO_CHAR(d, 'Day')                                               AS day_name,
     CASE WHEN EXTRACT(DOW FROM d) IN (0, 6) THEN TRUE ELSE FALSE END AS is_weekend
-FROM generate_series('2020-01-01'::date, '2026-12-31'::date, '1 day'::interval) AS d
+FROM bounds
+CROSS JOIN generate_series('2020-01-01'::date, bounds.end_date, '1 day'::interval) AS d
