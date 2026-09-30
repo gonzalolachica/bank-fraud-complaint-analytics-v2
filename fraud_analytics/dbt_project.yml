@@ -1,3 +1,6 @@
+on-run-start:
+  - "{{ create_helper_functions() }}"
+  
 name: 'fraud_analytics'
 version: '1.0.0'
 
