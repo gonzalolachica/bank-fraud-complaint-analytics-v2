@@ -26,3 +26,10 @@ seeds:
         description: "Natural key — fct_complaints joins on this, so it must be unique."
         data_tests:
           - unique
+
+  - name: state_lookup
+    columns:
+      - name: state_code
+        data_tests:
+          - unique
+          - not_null
