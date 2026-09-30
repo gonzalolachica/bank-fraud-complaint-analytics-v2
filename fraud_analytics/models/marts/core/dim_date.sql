@@ -19,7 +19,7 @@ SELECT
     EXTRACT(MONTH FROM d)::int                                      AS month,
     TO_CHAR(d, 'FMMonth')                                             AS month_name,
     EXTRACT(DAY FROM d)::int                                        AS day,
-    EXTRACT(DOW FROM d)::int                                        AS day_of_week,
+    (EXTRACT(DOW FROM d)::int + 1)                                        AS day_of_week,
     TO_CHAR(d, 'FMDay')                                               AS day_name,
     CASE WHEN EXTRACT(DOW FROM d) IN (0, 6) THEN TRUE ELSE FALSE END AS is_weekend
 FROM bounds
