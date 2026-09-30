@@ -17,10 +17,10 @@ SELECT
     EXTRACT(YEAR FROM d)::int                                       AS year,
     EXTRACT(QUARTER FROM d)::int                                    AS quarter,
     EXTRACT(MONTH FROM d)::int                                      AS month,
-    TO_CHAR(d, 'Month')                                             AS month_name,
+    TO_CHAR(d, 'FMMonth')                                             AS month_name,
     EXTRACT(DAY FROM d)::int                                        AS day,
     EXTRACT(DOW FROM d)::int                                        AS day_of_week,
-    TO_CHAR(d, 'Day')                                               AS day_name,
+    TO_CHAR(d, 'FMDay')                                               AS day_name,
     CASE WHEN EXTRACT(DOW FROM d) IN (0, 6) THEN TRUE ELSE FALSE END AS is_weekend
 FROM bounds
 CROSS JOIN generate_series('2020-01-01'::date, bounds.end_date, '1 day'::interval) AS d
