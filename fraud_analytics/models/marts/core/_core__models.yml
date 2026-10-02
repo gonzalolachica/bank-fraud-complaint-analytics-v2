@@ -118,7 +118,7 @@ models:
         description: "TRUE on Saturday and Sunday."
 
   - name: dim_issue
-    description: "One row per distinct issue / sub-issue pair, with the is_fraud_related flag from the allow-list seed."
+    description: "One row per distinct issue / sub-issue pair, with the is_fraud_related flag and fraud_type label from the allow-list seed."
     config:
       contract:
         enforced: true
@@ -138,6 +138,9 @@ models:
       - name: is_fraud_related
         data_type: boolean
         description: "TRUE if the pair matches the fraud_issue_allowlist seed (11 of 275 pairs at last check)."
+      - name: fraud_type
+        data_type: text
+        description: "Fraud typology of the matching allow-list rule (Unauthorized transactions, Identity theft / new account, Scams, Fraud alerts / freezes). NULL for non-fraud pairs."
 
   - name: dim_geography
     description: "One row per state code (plus UNK for missing state)."

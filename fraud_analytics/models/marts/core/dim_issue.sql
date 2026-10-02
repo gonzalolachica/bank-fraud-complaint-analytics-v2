@@ -1,8 +1,10 @@
 -- Every distinct issue/sub-issue pair in the data, flagged fraud-related
 -- if it matches the manually reviewed allow-list (seeds/fraud_issue_allowlist.csv).
--- Ported from Supabase script 07 (Fabric script 08).-- Rules:
+-- Ported from Supabase script 07 (Fabric script 08).
+-- Rules:
 --   match_on = 'sub_issue' -> fraud if sub_issue matches (any issue)
 --   match_on = 'issue'     -> fraud if issue matches AND sub_issue is NULL
+-- fraud_type: the typology label of the matching rule (NULL if no rule matches).
 
 WITH distinct_issues AS (
     SELECT DISTINCT issue, sub_issue
@@ -26,5 +28,11 @@ SELECT
         FROM {{ ref('fraud_issue_allowlist') }} a
         WHERE (a.match_on = 'sub_issue' AND a.value = n.sub_issue)
            OR (a.match_on = 'issue' AND n.sub_issue IS NULL AND a.value = n.issue)
-    ) AS is_fraud_related
+    ) AS is_fraud_related,
+    (
+        SELECT a.fraud_type
+        FROM {{ ref('fraud_issue_allowlist') }} a
+        WHERE (a.match_on = 'sub_issue' AND a.value = n.sub_issue)
+           OR (a.match_on = 'issue' AND n.sub_issue IS NULL AND a.value = n.issue)
+    ) AS fraud_type
 FROM numbered n

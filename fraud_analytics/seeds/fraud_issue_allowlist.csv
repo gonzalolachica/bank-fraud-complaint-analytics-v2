@@ -1,12 +1,12 @@
-match_on,value
-sub_issue,Transaction was not authorized
-sub_issue,Card opened without my consent or knowledge
-sub_issue,Debt was result of identity theft
-sub_issue,Card opened as result of identity theft or fraud
-sub_issue,Account opened without my consent or knowledge
-sub_issue,Loan opened without my consent or knowledge
-issue,Fraud or scam
-issue,Account opened as a result of fraud
-issue,Problem with fraud alerts or security freezes
-issue,Unauthorized transactions or other transaction problem
-issue,Unauthorized withdrawals or charges
+match_on,value,fraud_type
+sub_issue,Transaction was not authorized,Unauthorized transactions
+sub_issue,Card opened without my consent or knowledge,Identity theft / new account
+sub_issue,Debt was result of identity theft,Identity theft / new account
+sub_issue,Card opened as result of identity theft or fraud,Identity theft / new account
+sub_issue,Account opened without my consent or knowledge,Identity theft / new account
+sub_issue,Loan opened without my consent or knowledge,Identity theft / new account
+issue,Fraud or scam,Scams
+issue,Account opened as a result of fraud,Identity theft / new account
+issue,Problem with fraud alerts or security freezes,Fraud alerts / freezes
+issue,Unauthorized transactions or other transaction problem,Unauthorized transactions
+issue,Unauthorized withdrawals or charges,Unauthorized transactions
