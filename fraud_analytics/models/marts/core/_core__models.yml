@@ -3,14 +3,19 @@ version: 2
 models:
   - name: fct_complaints
     description: "Fact table: one row per complaint, with keys to each dimension and the is_fraud_complaint flag."
+    config:
+      contract:
+        enforced: true   # dbt checks column names + types before building; mismatch = build fails
     columns:
       - name: complaint_id
+        data_type: bigint
         description: "CFPB complaint ID — the grain of the table."
         data_tests:
           - unique
           - not_null
 
       - name: date_key
+        data_type: integer
         description: "YYYYMMDD integer key to dim_date."
         data_tests:
           - relationships:
@@ -19,6 +24,7 @@ models:
                 field: date_key
 
       - name: company_key
+        data_type: integer
         description: "Key to dim_company (seed)."
         data_tests:
           - relationships:
@@ -27,6 +33,7 @@ models:
                 field: company_key
 
       - name: product_key
+        data_type: integer
         description: "Key to dim_product (seed)."
         data_tests:
           - relationships:
@@ -35,6 +42,7 @@ models:
                 field: product_key
 
       - name: issue_key
+        data_type: bigint
         description: "Key to dim_issue (issue / sub-issue pair)."
         data_tests:
           - relationships:
@@ -43,6 +51,7 @@ models:
                 field: issue_key
 
       - name: geography_key
+        data_type: bigint
         description: "Key to dim_geography (state; missing state maps to UNK)."
         data_tests:
           - relationships:
@@ -50,8 +59,24 @@ models:
                 to: ref('dim_geography')
                 field: geography_key
 
+      - name: is_fraud_complaint
+        data_type: boolean
+        description: "TRUE if product_group = 'Money Transfer / Virtual Currency' OR the issue pair is on the fraud allow-list."
+
+      - name: company_response
+        data_type: text
+        description: "Company's response to the consumer."
+
+      - name: timely_response
+        data_type: text
+        description: "Whether the company responded on time (CFPB field)."
+
+      - name: submitted_via
+        data_type: text
+        description: "Channel the complaint was submitted through (Web, Phone, ...)."
+
   - name: dim_date
-    description: "One row per calendar day, 2020-01-01 to 2026-12-31."
+    description: "One row per calendar day, from 2020-01-01 to Dec 31 of the latest complaint year (grows with the data)."
     columns:
       - name: date_key
         description: "Primary key, YYYYMMDD integer."
