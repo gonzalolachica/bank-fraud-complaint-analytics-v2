@@ -1,6 +1,3 @@
-on-run-start:
-  - "{{ create_helper_functions() }}"
-  
 name: 'fraud_analytics'
 version: '1.0.0'
 
@@ -17,14 +14,33 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-# All models build as views in the `analytics` schema (set in profiles.yml).
-# Override per model with {{ config(materialized='table') }} when needed (e.g. for Power BI).
+# Runs before every dbt build/run/test/seed: creates public.try_cast_date / try_cast_bigint
+on-run-start:
+  - "{{ create_helper_functions() }}"
+
+# Everything builds in the `analytics` schema (set in profiles.yml).
+# Staging = view (internal step). Marts = tables, read by Power BI.
+# +grants: dbt re-applies GRANT SELECT after every build, because each rebuild
+# creates a brand-new table and the old table's grants are dropped with it.
 models:
   fraud_analytics:
     staging:
-      +materialized: view    # cleaned copy of the raw CFPB source (Power BI never reads it)
+      +materialized: view    # cleaned copy of the raw CFPB source (Power BI never reads it, no grant)
     marts:
+      +grants:
+        select: ['powerbi_reader']   # read-only Power BI login; applies to core + analysis
       core:
-        +materialized: table # star schema: dims + fct_complaints, stored for Power BI
+        +materialized: table # star schema: dims + fct_complaints
       analysis:
         +materialized: table # small summarized outputs, cheap to store
+
+seeds:
+  fraud_analytics:
+    dim_company:
+      +grants:
+        select: ['powerbi_reader']   # dimension in the star schema
+    dim_product:
+      +grants:
+        select: ['powerbi_reader']   # dimension in the star schema
+    # state_lookup and fraud_issue_allowlist: no grant. Their data already lives
+    # inside dim_geography / dim_issue, so Power BI never needs them.
