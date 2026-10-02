@@ -22,9 +22,9 @@ clean-targets:
 models:
   fraud_analytics:
     staging:
-      +materialized: view   # cleaned copy of the raw CFPB source
+      +materialized: view    # cleaned copy of the raw CFPB source (Power BI never reads it)
     marts:
       core:
-        +materialized: view # star schema: dims + fct_complaints
+        +materialized: table # star schema: dims + fct_complaints, stored for Power BI
       analysis:
-        +materialized: view # analysis outputs (ported from SQL scripts 11-17)
+        +materialized: table # small summarized outputs, cheap to store
