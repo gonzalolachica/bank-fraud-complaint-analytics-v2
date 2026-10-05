@@ -6,7 +6,6 @@ sub_issue,Card opened as result of identity theft or fraud,Identity theft / new 
 sub_issue,Account opened without my consent or knowledge,Identity theft / new account
 sub_issue,Loan opened without my consent or knowledge,Identity theft / new account
 issue,Fraud or scam,Scams
-issue,Account opened as a result of fraud,Identity theft / new account
 issue,Problem with fraud alerts or security freezes,Fraud alerts / freezes
 issue,Unauthorized transactions or other transaction problem,Unauthorized transactions
 issue,Unauthorized withdrawals or charges,Unauthorized transactions
