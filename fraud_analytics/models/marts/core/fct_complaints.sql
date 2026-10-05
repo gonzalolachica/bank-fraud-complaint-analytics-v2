@@ -18,7 +18,15 @@ SELECT
     END AS is_fraud_complaint,
     c.company_response_to_consumer AS company_response,
     c.timely_response,
-    c.submitted_via
+    c.submitted_via,
+
+    -- Relief flags: the business rules for "closed" and "relief" live here, once.
+    -- DAX measures count these flags and never re-type the response strings.
+    COALESCE(c.company_response_to_consumer NOT IN ('In progress'), FALSE)          AS is_closed,
+    COALESCE(c.company_response_to_consumer = 'Closed with monetary relief', FALSE) AS got_monetary_relief,
+    COALESCE(c.company_response_to_consumer IN ('Closed with monetary relief',
+                                                'Closed with non-monetary relief'), FALSE) AS got_any_relief
+
 FROM {{ ref('stg_complaints_clean') }} c
 JOIN {{ ref('dim_company') }}   co ON c.company = co.company_name
 JOIN {{ ref('dim_product') }}   p  ON c.product = p.product_name

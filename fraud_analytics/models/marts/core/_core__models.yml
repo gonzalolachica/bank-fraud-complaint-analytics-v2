@@ -75,6 +75,24 @@ models:
         data_type: text
         description: "Channel the complaint was submitted through (Web, Phone, ...)."
 
+      - name: is_closed
+        data_type: boolean
+        description: "TRUE if the complaint has an outcome (response not NULL and not 'In progress'). Denominator for relief rates."
+        data_tests:
+          - not_null
+
+      - name: got_monetary_relief
+        data_type: boolean
+        description: "TRUE if closed with monetary relief."
+        data_tests:
+          - not_null
+
+      - name: got_any_relief
+        data_type: boolean
+        description: "TRUE if closed with monetary or non-monetary relief."
+        data_tests:
+          - not_null
+
   - name: dim_date
     description: "One row per calendar day, from 2020-01-01 to Dec 31 of the latest complaint year (grows with the data)."
     config:
