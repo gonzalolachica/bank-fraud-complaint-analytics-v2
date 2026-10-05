@@ -3,5 +3,34 @@ version: 2
 sources:
   - name: raw
     schema: public
+    description: "Raw CFPB data, loaded by ingestion/ingest_cfpb.py (TRUNCATE + append in one transaction)."
     tables:
       - name: stg_complaints_raw
+        description: "One row per CFPB complaint for Truist, JPMorgan Chase and American Express, 2020 onward. All text except complaint_id."
+        columns:
+          - name: complaint_id
+            description: "CFPB complaint ID."
+            data_tests:
+              - unique
+              - not_null
+
+          - name: company
+            description: "Bank name exactly as CFPB publishes it. Only our 3 banks are expected."
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values:
+                      - "JPMORGAN CHASE & CO."
+                      - "TRUIST FINANCIAL CORPORATION"
+                      - "AMERICAN EXPRESS COMPANY"
+
+          - name: company_response_to_consumer
+            description: "Company's response. The relief logic depends on these exact strings, so any new or renamed value must fail the build."
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values:
+                      - "Closed with explanation"
+                      - "Closed with non-monetary relief"
+                      - "Closed with monetary relief"
+                      - "In progress"
