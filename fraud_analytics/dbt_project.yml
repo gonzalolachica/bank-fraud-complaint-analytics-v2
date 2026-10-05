@@ -27,13 +27,13 @@ models:
     staging:
       +materialized: view    # cleaned copy of the raw CFPB source (Power BI never reads it, no grant)
     marts:
-      +grants:
-        select: ['powerbi_reader']   # read-only Power BI login; applies to core + analysis
       core:
         +materialized: table # star schema: dims + fct_complaints
+        +grants:
+          select: ['powerbi_reader']   # Power BI reads ONLY the star schema
       analysis:
-        +materialized: table # small summarized outputs, cheap to store
-
+        +materialized: table # exploration + answer key for validating DAX measures; deliberately NOT granted
+        
 seeds:
   fraud_analytics:
     dim_company:
