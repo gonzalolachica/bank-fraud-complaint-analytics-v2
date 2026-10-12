@@ -1,0 +1,53 @@
+table _Measures
+	lineageTag: e8004721-c205-4635-8b81-2843713e17d1
+
+	measure 'Total Complaints' = COUNTROWS (fct_complaints)
+		formatString: 0
+		lineageTag: f887aa08-864c-4de8-a5cd-3da4cf7943ac
+
+	measure 'Fraud Complaints' = CALCULATE( [Total Complaints], fct_complaints[is_fraud_complaint] = TRUE () )
+		formatString: 0
+		lineageTag: f528af6b-15d1-4dec-8e96-7d591b3f305d
+
+	measure 'Fraud Share' = DIVIDE( [Fraud Complaints], [Total Complaints] )
+		lineageTag: 617b3abb-c67b-4965-bec4-f7941f313afd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Closed Fraud Complaints' =
+			
+			CALCULATE ( [Fraud Complaints], fct_complaints[is_closed] = TRUE () )
+		formatString: 0
+		lineageTag: 4c7046b2-b1d3-422c-a242-7fc40ae5dd5b
+
+	measure 'Fraud Any Relief' = CALCULATE([Fraud Complaints], fct_complaints[got_any_relief] =TRUE () )
+		formatString: 0
+		lineageTag: 01d57edf-5dbc-4705-92af-88b399b55504
+
+	measure 'Fraud Relief Rate' = DIVIDE([Fraud Any Relief],[Closed Fraud Complaints])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a1196778-5ecd-429f-aab9-f3f8982fed68
+
+	measure 'Fraud Monetary Relief Rate' =
+			
+			DIVIDE (
+			    CALCULATE ( [Fraud Complaints], fct_complaints[got_monetary_relief] = TRUE () ),
+			    [Closed Fraud Complaints]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: fadba059-c961-451b-80ea-3c65b711d2c3
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

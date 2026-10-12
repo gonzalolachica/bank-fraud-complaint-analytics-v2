@@ -1,0 +1,41 @@
+table dim_product
+	lineageTag: 918f4c5e-8c2a-41a6-8d61-c78d79556090
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 730f5259-ca34-4986-b364-9658cc2ac1f4
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: ea43d931-ab2a-418c-ac11-2cf9dd490af8
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_group
+		dataType: string
+		lineageTag: 28040dbf-ab4a-4918-9a7d-fcabe312de85
+		summarizeBy: none
+		sourceColumn: product_group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_product = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("aws-0-us-east-1.pooler.supabase.com:5432", "postgres"),
+				    analytics_dim_product = Source{[Schema="analytics",Item="dim_product"]}[Data]
+				in
+				    analytics_dim_product
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

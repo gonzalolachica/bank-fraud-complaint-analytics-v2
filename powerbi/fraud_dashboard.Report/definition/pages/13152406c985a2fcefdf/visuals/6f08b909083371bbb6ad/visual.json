@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "6f08b909083371bbb6ad",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 288,
+    "width": 768,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "dim_company.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Closed Fraud Complaints"
+                }
+              },
+              "queryRef": "_Measures.Closed Fraud Complaints",
+              "nativeQueryRef": "Closed Fraud Complaints"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Fraud Relief Rate"
+                }
+              },
+              "queryRef": "_Measures.Fraud Relief Rate",
+              "nativeQueryRef": "Fraud Relief Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Fraud Monetary Relief Rate"
+                }
+              },
+              "queryRef": "_Measures.Fraud Monetary Relief Rate",
+              "nativeQueryRef": "Fraud Monetary Relief Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "33199f01dd42491af4ea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_company"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

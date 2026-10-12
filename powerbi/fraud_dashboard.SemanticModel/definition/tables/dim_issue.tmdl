@@ -1,0 +1,58 @@
+table dim_issue
+	lineageTag: cd491421-10d1-40b8-94c6-458ac5047819
+
+	column issue_key
+		dataType: int64
+		formatString: 0
+		lineageTag: edde1eca-06b8-4b9e-88fd-63cfc0b7d11d
+		summarizeBy: none
+		sourceColumn: issue_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column issue
+		dataType: string
+		lineageTag: 15be7379-83e9-430c-bc79-9eaaff0bde42
+		summarizeBy: none
+		sourceColumn: issue
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_issue
+		dataType: string
+		lineageTag: 5363f498-7e02-4091-91ea-e262261d5def
+		summarizeBy: none
+		sourceColumn: sub_issue
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_fraud_related
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b4f0fa02-a075-439c-8924-fbeb471d034c
+		summarizeBy: none
+		sourceColumn: is_fraud_related
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_type
+		dataType: string
+		lineageTag: 35a0c385-c679-460e-b800-c77fb2491f64
+		summarizeBy: none
+		sourceColumn: fraud_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_issue = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("aws-0-us-east-1.pooler.supabase.com:5432", "postgres"),
+				    analytics_dim_issue = Source{[Schema="analytics",Item="dim_issue"]}[Data]
+				in
+				    analytics_dim_issue
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

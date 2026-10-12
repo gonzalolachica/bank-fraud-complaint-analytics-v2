@@ -1,0 +1,49 @@
+table dim_geography
+	lineageTag: 6f5061f2-932b-4a35-a7c6-8eccc9f9d5ed
+
+	column geography_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e41877f-3477-4b91-891c-6aa906a985f1
+		summarizeBy: none
+		sourceColumn: geography_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_code
+		dataType: string
+		lineageTag: 5ca1ec0b-6928-47f2-a691-1b32496bc344
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_name
+		dataType: string
+		lineageTag: 7c1520da-25aa-4730-8e67-f7ef8951b266
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: c41e02be-d371-4802-af23-e9b97c361c36
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_geography = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("aws-0-us-east-1.pooler.supabase.com:5432", "postgres"),
+				    analytics_dim_geography = Source{[Schema="analytics",Item="dim_geography"]}[Data]
+				in
+				    analytics_dim_geography
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,70 @@
+table bank_size
+	lineageTag: bd984384-c8e4-470d-a4f5-c76db13dda4a
+
+	column company_name
+		dataType: string
+		lineageTag: e875cef9-40ca-4a48-89e0-31744b087ea7
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_deposits_bn
+		dataType: double
+		lineageTag: d447e12b-8263-4e99-847e-55851450eba9
+		summarizeBy: sum
+		sourceColumn: total_deposits_bn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column as_of_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ae6a0376-8467-447b-9356-3d0d8e7f9c31
+		summarizeBy: none
+		sourceColumn: as_of_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column source
+		dataType: string
+		lineageTag: 95bad15d-7371-445d-bf14-e43ea92268a8
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column include_in_normalized
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 508f784e-97e1-4437-96d5-a0010a5bc7ef
+		summarizeBy: none
+		sourceColumn: include_in_normalized
+
+		annotation SummarizationSetBy = Automatic
+
+	column note
+		dataType: string
+		lineageTag: 44dccc45-b708-4177-aa6c-8850980775c1
+		summarizeBy: none
+		sourceColumn: note
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bank_size = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("aws-0-us-east-1.pooler.supabase.com:5432", "postgres"),
+				    analytics_bank_size = Source{[Schema="analytics",Item="bank_size"]}[Data]
+				in
+				    analytics_bank_size
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

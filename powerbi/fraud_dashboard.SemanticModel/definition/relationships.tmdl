@@ -1,0 +1,26 @@
+relationship AutoDetected_f36206e3-26d1-4bab-a9e6-f121576d63a1
+	fromColumn: fct_complaints.date_key
+	toColumn: dim_date.date_key
+
+relationship AutoDetected_11ca1952-74ce-4ca2-8bfb-b30afe10a816
+	fromColumn: fct_complaints.company_key
+	toColumn: dim_company.company_key
+
+relationship AutoDetected_e6b39b63-6160-407f-a69b-8cd1246e2a66
+	fromColumn: fct_complaints.product_key
+	toColumn: dim_product.product_key
+
+relationship AutoDetected_322efe53-f9a6-4067-a084-99de267efb22
+	fromColumn: fct_complaints.issue_key
+	toColumn: dim_issue.issue_key
+
+relationship AutoDetected_598346b6-a318-42ac-9324-c3bcf84e6a92
+	fromColumn: fct_complaints.geography_key
+	toColumn: dim_geography.geography_key
+
+relationship AutoDetected_29735a4b-f71b-4e81-9150-b28b0ce4322d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: bank_size.company_name
+	toColumn: dim_company.company_name
+

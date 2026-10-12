@@ -19,3 +19,11 @@ profiles.yml
 # Editor / OS
 .vscode/
 Thumbs.db
+
+*.pbix
+
+
+# Power BI: never commit data or machine settings
+*.pbix
+**/.pbi/cache.abf
+**/.pbi/localSettings.json

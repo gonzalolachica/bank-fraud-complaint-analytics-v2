@@ -1,0 +1,130 @@
+table fct_complaints
+	lineageTag: e54c92c7-6993-4a2b-81a1-198b1884e862
+
+	column complaint_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 691fb9ba-320f-4eed-8fd2-197bb311100f
+		summarizeBy: none
+		sourceColumn: complaint_id
+
+		annotation SummarizationSetBy = User
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 271991b4-689c-4a6f-af3c-06d11422dd07
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ee1a5f6a-189e-4375-a8a4-f89bd555ac31
+		summarizeBy: none
+		sourceColumn: company_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ad870c09-4329-43f6-8909-50940f230b62
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column issue_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 9776ca1b-4b04-400b-ac7b-1642c13305a9
+		summarizeBy: none
+		sourceColumn: issue_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column geography_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e72f7f6-8ab7-409a-9114-d417bbfb16e8
+		summarizeBy: none
+		sourceColumn: geography_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_fraud_complaint
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bc0f586b-a6ba-4d50-9ee4-8f923f10b974
+		summarizeBy: none
+		sourceColumn: is_fraud_complaint
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_response
+		dataType: string
+		lineageTag: 72fb7a8d-b175-415a-8bf8-bff534aceec8
+		summarizeBy: none
+		sourceColumn: company_response
+
+		annotation SummarizationSetBy = Automatic
+
+	column timely_response
+		dataType: string
+		lineageTag: 5f7bfee4-272c-41a9-9ce7-14fa067e871f
+		summarizeBy: none
+		sourceColumn: timely_response
+
+		annotation SummarizationSetBy = Automatic
+
+	column submitted_via
+		dataType: string
+		lineageTag: 67f1b57e-d146-42b1-b749-38bca81cb3ec
+		summarizeBy: none
+		sourceColumn: submitted_via
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_closed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 94c864f7-aaf2-401b-9465-c25504eb0aed
+		summarizeBy: none
+		sourceColumn: is_closed
+
+		annotation SummarizationSetBy = Automatic
+
+	column got_monetary_relief
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dd6b518c-850c-448b-af8c-890238137f84
+		summarizeBy: none
+		sourceColumn: got_monetary_relief
+
+		annotation SummarizationSetBy = Automatic
+
+	column got_any_relief
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f0e98c63-a6bd-4e77-b878-1e23155d0396
+		summarizeBy: none
+		sourceColumn: got_any_relief
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fct_complaints = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("aws-0-us-east-1.pooler.supabase.com:5432", "postgres"),
+				    analytics_fct_complaints = Source{[Schema="analytics",Item="fct_complaints"]}[Data]
+				in
+				    analytics_fct_complaints
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

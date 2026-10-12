@@ -1,0 +1,42 @@
+table dim_company
+	lineageTag: ef63ba80-c0e2-440a-8622-51acfcc6ea1d
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 38e8b572-0775-4665-ab46-18343c1f1f77
+		summarizeBy: none
+		sourceColumn: company_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: fc456c99-16a7-4043-a2bd-8c9685cf75f4
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_zelle_owner
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 66297335-d2e0-485d-ab6b-1205c4233abf
+		summarizeBy: none
+		sourceColumn: is_zelle_owner
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_company = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("aws-0-us-east-1.pooler.supabase.com:5432", "postgres"),
+				    analytics_dim_company = Source{[Schema="analytics",Item="dim_company"]}[Data]
+				in
+				    analytics_dim_company
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
