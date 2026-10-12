@@ -12,6 +12,7 @@ table fct_complaints
 
 	column date_key
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 271991b4-689c-4a6f-af3c-06d11422dd07
 		summarizeBy: none
@@ -21,6 +22,7 @@ table fct_complaints
 
 	column company_key
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: ee1a5f6a-189e-4375-a8a4-f89bd555ac31
 		summarizeBy: none
@@ -30,6 +32,7 @@ table fct_complaints
 
 	column product_key
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: ad870c09-4329-43f6-8909-50940f230b62
 		summarizeBy: none
@@ -39,6 +42,7 @@ table fct_complaints
 
 	column issue_key
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 9776ca1b-4b04-400b-ac7b-1642c13305a9
 		summarizeBy: none
@@ -48,6 +52,7 @@ table fct_complaints
 
 	column geography_key
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 9e72f7f6-8ab7-409a-9114-d417bbfb16e8
 		summarizeBy: none

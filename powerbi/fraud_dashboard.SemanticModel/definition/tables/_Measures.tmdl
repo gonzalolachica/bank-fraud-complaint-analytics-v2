@@ -10,9 +10,8 @@ table _Measures
 		lineageTag: f528af6b-15d1-4dec-8e96-7d591b3f305d
 
 	measure 'Fraud Share' = DIVIDE( [Fraud Complaints], [Total Complaints] )
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 617b3abb-c67b-4965-bec4-f7941f313afd
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Closed Fraud Complaints' =
 			
@@ -25,7 +24,7 @@ table _Measures
 		lineageTag: 01d57edf-5dbc-4705-92af-88b399b55504
 
 	measure 'Fraud Relief Rate' = DIVIDE([Fraud Any Relief],[Closed Fraud Complaints])
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: a1196778-5ecd-429f-aab9-f3f8982fed68
 
 	measure 'Fraud Monetary Relief Rate' =
@@ -34,10 +33,10 @@ table _Measures
 			    CALCULATE ( [Fraud Complaints], fct_complaints[got_monetary_relief] = TRUE () ),
 			    [Closed Fraud Complaints]
 			)
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: fadba059-c961-451b-80ea-3c65b711d2c3
 
-	measure 'Data Cutoff Date' = CALCULATE ( MAXX ( fct_complaintS , RELATED(dim_date[full_date] ) ), REMOVEFILTERS())
+	measure 'Data Cutoff Date' = CALCULATE ( MAXX ( fct_complaints , RELATED(dim_date[full_date] ) ), REMOVEFILTERS())
 		formatString: Short Date
 		lineageTag: 5729d38a-5be0-46ab-b51f-04cecd1e888f
 
@@ -77,8 +76,26 @@ table _Measures
 	measure 'Fraud YoY %' =
 			
 			DIVIDE ( [Fraud Current Annualized] - [Fraud Prior Year], [Fraud Prior Year] )
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: f3fcf622-5b03-486c-8ca2-53674eb07247
+
+	measure 'Fraud per $10B Deposits (Prior Year)' =
+			
+			CALCULATE (
+			    DIVIDE ( [Fraud Prior Year], SUM ( bank_size[total_deposits_bn] ) / 10 ),
+			    bank_size[include_in_normalized] = TRUE ()
+			)
+		formatString: 0.0
+		lineageTag: f627a5f6-5345-4777-b25b-8e2547fb3c04
+
+	measure 'Fraud per $10B Deposits (Current Ann.)' =
+			
+			CALCULATE (
+			    DIVIDE ( [Fraud Current Annualized], SUM ( bank_size[total_deposits_bn] ) / 10 ),
+			    bank_size[include_in_normalized] = TRUE ()
+			)
+		formatString: 0.0
+		lineageTag: fd16c258-3016-472b-91f8-06270aee05c1
 
 	partition _Measures = m
 		mode: import
