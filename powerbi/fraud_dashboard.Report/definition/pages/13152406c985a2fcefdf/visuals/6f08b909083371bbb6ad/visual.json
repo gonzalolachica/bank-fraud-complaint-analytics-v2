@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "6f08b909083371bbb6ad",
   "position": {
-    "x": 0,
+    "x": 16,
     "y": 0,
     "z": 0,
-    "height": 288,
-    "width": 768,
+    "height": 224,
+    "width": 752,
     "tabOrder": 0
   },
   "visual": {
@@ -37,11 +37,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Closed Fraud Complaints"
+                  "Property": "Fraud Prior Year"
                 }
               },
-              "queryRef": "_Measures.Closed Fraud Complaints",
-              "nativeQueryRef": "Closed Fraud Complaints"
+              "queryRef": "_Measures.Fraud Prior Year",
+              "nativeQueryRef": "Fraud Prior Year"
             },
             {
               "field": {
@@ -51,11 +51,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Fraud Relief Rate"
+                  "Property": "Fraud Current YTD"
                 }
               },
-              "queryRef": "_Measures.Fraud Relief Rate",
-              "nativeQueryRef": "Fraud Relief Rate"
+              "queryRef": "_Measures.Fraud Current YTD",
+              "nativeQueryRef": "Fraud Current YTD"
             },
             {
               "field": {
@@ -65,11 +65,25 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Fraud Monetary Relief Rate"
+                  "Property": "Fraud Current Annualized"
                 }
               },
-              "queryRef": "_Measures.Fraud Monetary Relief Rate",
-              "nativeQueryRef": "Fraud Monetary Relief Rate"
+              "queryRef": "_Measures.Fraud Current Annualized",
+              "nativeQueryRef": "Fraud Current Annualized"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Fraud YoY %"
+                }
+              },
+              "queryRef": "_Measures.Fraud YoY %",
+              "nativeQueryRef": "Fraud YoY %"
             }
           ]
         }

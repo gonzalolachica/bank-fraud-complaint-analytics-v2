@@ -37,6 +37,49 @@ table _Measures
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: fadba059-c961-451b-80ea-3c65b711d2c3
 
+	measure 'Data Cutoff Date' = CALCULATE ( MAXX ( fct_complaintS , RELATED(dim_date[full_date] ) ), REMOVEFILTERS())
+		formatString: Short Date
+		lineageTag: 5729d38a-5be0-46ab-b51f-04cecd1e888f
+
+	measure 'Days Elapsed' =
+			
+			VAR cutoff = [Data Cutoff Date]
+			RETURN DATEDIFF ( DATE ( YEAR ( cutoff ), 1, 1 ), cutoff, DAY ) + 1
+		formatString: 0
+		lineageTag: ec3b2269-d4e8-44cf-8904-3fa9ee315182
+
+	measure 'Current Year' = YEAR ( [Data Cutoff Date] )
+		formatString: 0
+		lineageTag: 3bf4b365-2baf-4309-bb97-23f72bb559ea
+
+	measure 'Fraud Prior Year' =
+			
+			VAR cy = [Current Year]
+			RETURN
+			    CALCULATE ( [Fraud Complaints], REMOVEFILTERS ( dim_date ), dim_date[year] = cy - 1 )
+		formatString: 0
+		lineageTag: 908f8cfd-7cea-4b3f-8eeb-db328d795fe1
+
+	measure 'Fraud Current YTD' =
+			
+			VAR cy = [Current Year]
+			RETURN
+			    CALCULATE ( [Fraud Complaints], REMOVEFILTERS ( dim_date ), dim_date[year] = cy )
+		formatString: 0
+		lineageTag: 384ed1a3-e9c3-467c-8033-cac091319d52
+
+	measure 'Fraud Current Annualized' =
+			
+			DIVIDE ( [Fraud Current YTD] * 365, [Days Elapsed] )
+		formatString: 0
+		lineageTag: d84ad181-d75b-4b79-ba51-e16c9b548d00
+
+	measure 'Fraud YoY %' =
+			
+			DIVIDE ( [Fraud Current Annualized] - [Fraud Prior Year], [Fraud Prior Year] )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f3fcf622-5b03-486c-8ca2-53674eb07247
+
 	partition _Measures = m
 		mode: import
 		source =
