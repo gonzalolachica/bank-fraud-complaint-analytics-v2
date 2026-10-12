@@ -44,3 +44,6 @@ seeds:
         select: ['powerbi_reader']   # dimension in the star schema
     # state_lookup and fraud_issue_allowlist: no grant. Their data already lives
     # inside dim_geography / dim_issue, so Power BI never needs them.
+    bank_size:
+      +grants:
+        select: ['powerbi_reader']   # for normalizing fraud complaints

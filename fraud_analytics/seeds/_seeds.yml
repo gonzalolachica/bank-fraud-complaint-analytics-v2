@@ -33,3 +33,15 @@ seeds:
         data_tests:
           - unique
           - not_null
+
+  - name: bank_size
+    description: "Bank size from SEC filings, for normalizing fraud complaints. Human-curated."
+    columns:
+      - name: company_name
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_company')
+                field: company_name

@@ -1,0 +1,4 @@
+company_name,total_deposits_bn,as_of_date,source,include_in_normalized,note
+JPMORGAN CHASE & CO.,2713.7,2026-06-30,JPM 2Q26 earnings supplement (8-K Ex. 99.2),true,Firmwide period-end deposits
+TRUIST FINANCIAL CORPORATION,409.4,2026-06-30,Truist 2Q26 earnings release (8-K Ex. 99.1),true,End of period deposits
+AMERICAN EXPRESS COMPANY,157.0,2026-06-30,Amex Q2 2026 earnings tables (8-K Ex. 99.2),false,Card issuer - deposits understate customer base
