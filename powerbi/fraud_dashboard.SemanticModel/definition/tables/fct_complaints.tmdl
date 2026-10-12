@@ -120,6 +120,14 @@ table fct_complaints
 
 		annotation SummarizationSetBy = Automatic
 
+	column fraud_type
+		dataType: string
+		lineageTag: 917e8534-669d-4835-a27a-b031e1043ccf
+		summarizeBy: none
+		sourceColumn: fraud_type
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fct_complaints = m
 		mode: import
 		source =
@@ -128,8 +136,6 @@ table fct_complaints
 				    analytics_fct_complaints = Source{[Schema="analytics",Item="fct_complaints"]}[Data]
 				in
 				    analytics_fct_complaints
-
-	changedProperty = Name
 
 	annotation PBI_ResultType = Table
 

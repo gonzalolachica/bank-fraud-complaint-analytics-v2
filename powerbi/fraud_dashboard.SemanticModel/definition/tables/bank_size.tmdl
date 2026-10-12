@@ -64,7 +64,5 @@ table bank_size
 				in
 				    analytics_bank_size
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 

@@ -102,7 +102,5 @@ table dim_date
 				in
 				    analytics_dim_date
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 

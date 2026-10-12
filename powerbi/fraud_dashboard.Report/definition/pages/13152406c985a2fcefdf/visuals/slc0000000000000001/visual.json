@@ -23,11 +23,11 @@
                       "Entity": "dim_company"
                     }
                   },
-                  "Property": "company_name"
+                  "Property": "company_short"
                 }
               },
-              "queryRef": "dim_company.company_name",
-              "nativeQueryRef": "company_name",
+              "queryRef": "dim_company.company_short",
+              "nativeQueryRef": "company_short",
               "active": true,
               "displayName": "Bank"
             }

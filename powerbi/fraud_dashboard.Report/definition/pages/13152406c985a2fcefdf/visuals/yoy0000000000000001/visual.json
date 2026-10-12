@@ -4,10 +4,10 @@
   "position": {
     "x": 980,
     "y": 310,
-    "z": 8000,
+    "z": 9000,
     "height": 370,
     "width": 900,
-    "tabOrder": 8000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -23,11 +23,11 @@
                       "Entity": "dim_company"
                     }
                   },
-                  "Property": "company_name"
+                  "Property": "company_short"
                 }
               },
-              "queryRef": "dim_company.company_name",
-              "nativeQueryRef": "company_name",
+              "queryRef": "dim_company.company_short",
+              "nativeQueryRef": "company_short",
               "active": true,
               "displayName": "Bank"
             }
@@ -116,12 +116,12 @@
                             "Entity": "dim_company"
                           }
                         },
-                        "Property": "company_name"
+                        "Property": "company_short"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'TRUIST FINANCIAL CORPORATION'"
+                        "Value": "'Truist'"
                       }
                     }
                   }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "act0000000000000001",
   "position": {
-    "x": 1260,
-    "y": 600,
-    "z": 103,
-    "height": 440,
-    "width": 620,
-    "tabOrder": 103
+    "x": 1464,
+    "y": 144,
+    "z": 4000,
+    "height": 432,
+    "width": 432,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,12 +19,36 @@
               {
                 "textRuns": [
                   {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
                     "value": "WHAT TO DO",
                     "textStyle": {
-                      "color": "#B4400F",
+                      "fontWeight": "bold",
                       "fontSize": "14pt",
-                      "fontWeight": "bold"
+                      "textDecoration": "underline",
+                      "color": "#b4400f"
                     }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
                   }
                 ]
               },
@@ -33,16 +57,14 @@
                   {
                     "value": "1. Review identity-theft handling at Truist. ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt",
-                      "fontWeight": "bold"
+                      "fontWeight": "bold",
+                      "color": "#111111"
                     }
                   },
                   {
-                    "value": "Relief on 3.8% of complaints vs ~29\u201332% at peers, who mostly fix accounts and credit reports rather than refund.",
+                    "value": "Relief on 3.8% of complaints vs ~29–32% at peers, who mostly fix accounts and credit reports rather than refund.",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt"
+                      "color": "#111111"
                     }
                   }
                 ]
@@ -52,8 +74,7 @@
                   {
                     "value": " ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "6pt"
+                      "color": "#111111"
                     }
                   }
                 ]
@@ -63,16 +84,14 @@
                   {
                     "value": "2. Track fraud per $10B of deposits every quarter. ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt",
-                      "fontWeight": "bold"
+                      "fontWeight": "bold",
+                      "color": "#111111"
                     }
                   },
                   {
                     "value": "Truist crossed Chase in 2026; flag it if the gap keeps widening.",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt"
+                      "color": "#111111"
                     }
                   }
                 ]
@@ -82,8 +101,7 @@
                   {
                     "value": " ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "6pt"
+                      "color": "#111111"
                     }
                   }
                 ]
@@ -93,16 +111,14 @@
                   {
                     "value": "3. Treat scams as an industry-wide gap. ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt",
-                      "fontWeight": "bold"
+                      "fontWeight": "bold",
+                      "color": "#111111"
                     }
                   },
                   {
                     "value": "Few scam complaints get relief at any bank, so prevention and customer warnings matter more than refunds.",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt"
+                      "color": "#111111"
                     }
                   }
                 ]
@@ -112,8 +128,8 @@
                   {
                     "value": " ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "6pt"
+                      "fontSize": "6pt",
+                      "color": "#111111"
                     }
                   }
                 ]
@@ -123,8 +139,8 @@
                   {
                     "value": "Caveats: complaints show customer pain, not fraud losses. Some fraud-type counts are small, especially for Amex.",
                     "textStyle": {
-                      "color": "#4A4A4A",
-                      "fontSize": "9pt"
+                      "fontSize": "9pt",
+                      "color": "#4a4a4a"
                     }
                   }
                 ]
@@ -159,7 +175,53 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "60D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
                 }
               }
             }

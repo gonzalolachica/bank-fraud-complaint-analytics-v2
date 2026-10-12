@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "FRAUD & SCAM COMPLAINTS  \u00b7  CHASE  \u00b7  TRUIST  \u00b7  AMEX",
+                    "value": "FRAUD & SCAM COMPLAINTS  ·  CHASE  ·  TRUIST  ·  AMEX",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "26pt",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Why fraud complaints differ by bank, and what to do about it  \u00b7  Focus bank: Truist  \u00b7  Page 2 of 2: Why & Action",
+                    "value": "Why fraud complaints differ by bank, and what to do about it  ·  Focus bank: Truist  ·  Page 2 of 2: Why & Action",
                     "textStyle": {
                       "fontSize": "12pt",
                       "color": "#000000"

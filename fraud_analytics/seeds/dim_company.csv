@@ -1,4 +1,4 @@
-company_key,company_name,is_zelle_owner
-1,TRUIST FINANCIAL CORPORATION,true
-2,JPMORGAN CHASE & CO.,true
-3,AMERICAN EXPRESS COMPANY,false
+company_key,company_name,is_zelle_owner,company_short
+1,TRUIST FINANCIAL CORPORATION,true,Truist
+2,JPMORGAN CHASE & CO.,true,Chase
+3,AMERICAN EXPRESS COMPANY,false,Amex

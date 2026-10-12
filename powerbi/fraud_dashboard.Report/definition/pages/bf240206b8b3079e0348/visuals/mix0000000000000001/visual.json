@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "mix0000000000000001",
   "position": {
-    "x": 40,
-    "y": 150,
-    "z": 100,
-    "height": 420,
-    "width": 900,
-    "tabOrder": 100
+    "x": 48,
+    "y": 144,
+    "z": 1000,
+    "height": 432,
+    "width": 720,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "hundredPercentStackedBarChart",
@@ -23,11 +23,11 @@
                       "Entity": "dim_company"
                     }
                   },
-                  "Property": "company_name"
+                  "Property": "company_short"
                 }
               },
-              "queryRef": "dim_company.company_name",
-              "nativeQueryRef": "company_name",
+              "queryRef": "dim_company.company_short",
+              "nativeQueryRef": "company_short",
               "active": true,
               "displayName": "Bank"
             }
@@ -40,16 +40,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_issue"
+                      "Entity": "fct_complaints"
                     }
                   },
                   "Property": "fraud_type"
                 }
               },
-              "queryRef": "dim_issue.fraud_type",
-              "nativeQueryRef": "fraud_type",
-              "active": true,
-              "displayName": "Fraud type"
+              "queryRef": "fct_complaints.fraud_type",
+              "nativeQueryRef": "fraud_type"
             }
           ]
         },
@@ -71,6 +69,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Fraud Complaints"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {

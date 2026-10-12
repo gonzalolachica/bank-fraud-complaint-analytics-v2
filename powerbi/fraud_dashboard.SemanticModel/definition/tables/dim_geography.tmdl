@@ -43,7 +43,5 @@ table dim_geography
 				in
 				    analytics_dim_geography
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 

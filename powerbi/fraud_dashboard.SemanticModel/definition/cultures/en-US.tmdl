@@ -16,7 +16,6 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "fraud complaints": {
-			            "Type": "Noun",
 			            "State": "Generated"
 			          }
 			        },
@@ -124,16 +123,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "Fraud complaints (all years)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -433,12 +422,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Fraud YoY": {
-			            "State": "Generated",
-			            "Weight": 0.675
-			          }
-			        },
-			        {
 			          "fraud yoy percentage": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -459,7 +442,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Fraud YoY (current year annualized)": {
+			          "Change vs 2025": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -624,9 +607,9 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Prior year": {
+			          "fraud per $10B deposits": {
 			            "State": "Generated",
-			            "Weight": 0.675
+			            "Weight": 0.75
 			          }
 			        },
 			        {
@@ -656,9 +639,9 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Current year": {
+			          "fraud per $10B deposits": {
 			            "State": "Generated",
-			            "Weight": 0.675
+			            "Weight": 0.75
 			          }
 			        },
 			        {
@@ -788,6 +771,16 @@ cultureInfo en-US
 			          }
 			        },
 			        {
+			          "Money back rate (closed)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Money back": {
 			            "State": "Suggested",
 			            "Source": {
@@ -811,6 +804,12 @@ cultureInfo en-US
 			        {
 			          "company name": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "name": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -6440,6 +6439,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.75
 			          }
+			        },
+			        {
+			          "2025": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -6634,41 +6643,216 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.544
 			          }
+			        },
+			        {
+			          "Fraud complaints, 2026 (projected)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "2026 (projected)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.fraud_complaints_annualized_CY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Complaints (Annualized CY)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud complaints (annualized CY)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Fraud complaints": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fct_complaint.fraud_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fct_complaints",
+			          "ConceptualProperty": "fraud_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fraud_type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "type": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "fraud category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "fraud genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "fraud manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "fraud variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "fraud brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "fraud class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
 			        }
 			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "dim_company_is_named_company_name": {
+			    "fct_complaint_has_dim_company": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_company"
+			        "ConceptualEntity": "fct_complaints"
 			      },
 			      "State": "Generated",
 			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
 			        "dim_company": {
 			          "Target": {
 			            "Entity": "dim_company"
-			          }
-			        },
-			        "dim_company.company_name": {
-			          "Target": {
-			            "Entity": "dim_company.company_name"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Name": {
+			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_company"
+			              "Role": "fct_complaint"
 			            },
-			            "Name": {
-			              "Role": "dim_company.company_name"
+			            "Object": {
+			              "Role": "dim_company"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "company_names_are_names_IDs_of_dim_companies"
+			          "ID": "fct_complaints_have_dim_companies"
 			        },
 			        {
 			          "Attribute": {
@@ -6676,16 +6860,656 @@ cultureInfo en-US
 			              "Role": "dim_company"
 			            },
 			            "Object": {
-			              "Role": "dim_company.company_name"
+			              "Role": "fct_complaint"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_companies_have_company_names"
+			          "ID": "dim_companies_have_fct_complaints"
 			        }
 			      ]
 			    },
-			    "dim_product_is_named_product_name": {
+			    "fct_complaint_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fct_complaints"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_fraud_type": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.fraud_type": {
+			          "Target": {
+			            "Entity": "fct_complaint.fraud_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.fraud_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_types"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_fraud_complaints_annualized_CY": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.fraud_complaints_annualized_CY": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_complaints_annualized_CY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_complaints_annualized_CY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_fraud_complaints_annualized_CY"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_fraud_current_annualized": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.fraud_current_annualized": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_current_annualized"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_current_annualized"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_fraud_current_annualized"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_current_YTD": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_current_YTD": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_current_YTD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_current_YTD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_current_YTD"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_prior_year": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_prior_year": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_prior_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_prior_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_prior_year"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_current_year": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.current_year": {
+			          "Target": {
+			            "Entity": "entity__measure.current_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.current_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_current_year"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_current_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.current_year": {
+			          "Target": {
+			            "Entity": "entity__measure.current_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.current_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_current_year"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_days_elapsed": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.days_elapsed": {
+			          "Target": {
+			            "Entity": "entity__measure.days_elapsed"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.days_elapsed"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_days_elapsed"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_any_relief": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_any_relief": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_any_relief"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_any_relief"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_any_relief"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_closed_fraud_complaints": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.closed_fraud_complaints": {
+			          "Target": {
+			            "Entity": "entity__measure.closed_fraud_complaints"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.closed_fraud_complaints"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_closed_fraud_complaints"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_total_complaints": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.total_complaints": {
+			          "Target": {
+			            "Entity": "entity__measure.total_complaints"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_complaints"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_total_complaints"
+			        }
+			      ]
+			    },
+			    "bank_size_has_note": {
+			      "Binding": {
+			        "ConceptualEntity": "bank_size"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bank_size": {
+			          "Target": {
+			            "Entity": "bank_size"
+			          }
+			        },
+			        "bank_size.note": {
+			          "Target": {
+			            "Entity": "bank_size.note"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bank_size"
+			            },
+			            "Object": {
+			              "Role": "bank_size.note"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bank_sizes_have_notes"
+			        }
+			      ]
+			    },
+			    "bank_size_has_include_in_normalized": {
+			      "Binding": {
+			        "ConceptualEntity": "bank_size"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bank_size": {
+			          "Target": {
+			            "Entity": "bank_size"
+			          }
+			        },
+			        "bank_size.include_in_normalized": {
+			          "Target": {
+			            "Entity": "bank_size.include_in_normalized"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bank_size"
+			            },
+			            "Object": {
+			              "Role": "bank_size.include_in_normalized"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bank_sizes_have_include_in_normalized"
+			        }
+			      ]
+			    },
+			    "bank_size_has_source": {
+			      "Binding": {
+			        "ConceptualEntity": "bank_size"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bank_size": {
+			          "Target": {
+			            "Entity": "bank_size"
+			          }
+			        },
+			        "bank_size.source": {
+			          "Target": {
+			            "Entity": "bank_size.source"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bank_size"
+			            },
+			            "Object": {
+			              "Role": "bank_size.source"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bank_sizes_have_sources"
+			        }
+			      ]
+			    },
+			    "bank_size_has_as_of_date": {
+			      "Binding": {
+			        "ConceptualEntity": "bank_size"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bank_size": {
+			          "Target": {
+			            "Entity": "bank_size"
+			          }
+			        },
+			        "bank_size.as_of_date": {
+			          "Target": {
+			            "Entity": "bank_size.as_of_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bank_size"
+			            },
+			            "Object": {
+			              "Role": "bank_size.as_of_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bank_sizes_have_as_of_date"
+			        }
+			      ]
+			    },
+			    "bank_size_has_total_deposits_bn": {
+			      "Binding": {
+			        "ConceptualEntity": "bank_size"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bank_size": {
+			          "Target": {
+			            "Entity": "bank_size"
+			          }
+			        },
+			        "bank_size.total_deposits_bn": {
+			          "Target": {
+			            "Entity": "bank_size.total_deposits_bn"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bank_size"
+			            },
+			            "Object": {
+			              "Role": "bank_size.total_deposits_bn"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bank_sizes_have_total_deposits_bns"
+			        }
+			      ]
+			    },
+			    "bank_size_has_company_name": {
+			      "Binding": {
+			        "ConceptualEntity": "bank_size"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bank_size": {
+			          "Target": {
+			            "Entity": "bank_size"
+			          }
+			        },
+			        "bank_size.company_name": {
+			          "Target": {
+			            "Entity": "bank_size.company_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bank_size"
+			            },
+			            "Object": {
+			              "Role": "bank_size.company_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bank_sizes_have_company_names"
+			        }
+			      ]
+			    },
+			    "dim_product_has_product_group": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.product_group": {
+			          "Target": {
+			            "Entity": "dim_product.product_group"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.product_group"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_product_groups"
+			        }
+			      ]
+			    },
+			    "dim_product_has_product_name": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_product"
 			      },
@@ -6704,19 +7528,6 @@ cultureInfo en-US
 			      },
 			      "Phrasings": [
 			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "dim_product"
-			            },
-			            "Name": {
-			              "Role": "dim_product.product_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "product_names_are_names_IDs_of_dim_products"
-			        },
-			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_product"
@@ -6728,60 +7539,419 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_products_have_product_names"
-			        }
-			      ]
-			    },
-			    "fct_complaint_is_closed": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
 			        },
-			        "fct_complaint.is_closed": {
-			          "Target": {
-			            "Entity": "fct_complaint.is_closed"
-			          }
-			        }
-			      },
-			      "Conditions": [
 			        {
-			          "Target": {
-			            "Role": "fct_complaint.is_closed"
-			          },
-			          "Operator": "Equals",
-			          "Value": {
-			            "Boolean": [
-			              true
-			            ]
-			          }
-			        }
-			      ],
-			      "Phrasings": [
-			        {
-			          "Adjective": {
+			          "Name": {
 			            "Subject": {
-			              "Role": "fct_complaint"
+			              "Role": "dim_product"
 			            },
-			            "Adjectives": [
-			              {
-			                "closed": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ]
+			            "Name": {
+			              "Role": "dim_product.product_name"
+			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "some_fct_complaints_are_closed_fct_complaints"
+			          "ID": "product_names_are_names_IDs_of_dim_products"
 			        }
 			      ]
 			    },
-			    "dim_date_is_weekend": {
+			    "dim_product_has_product_key": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.product_key": {
+			          "Target": {
+			            "Entity": "dim_product.product_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.product_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_product_keys"
+			        }
+			      ]
+			    },
+			    "dim_company_has_is_zelle_owner": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_company"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_company": {
+			          "Target": {
+			            "Entity": "dim_company"
+			          }
+			        },
+			        "dim_company.is_zelle_owner": {
+			          "Target": {
+			            "Entity": "dim_company.is_zelle_owner"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_company"
+			            },
+			            "Object": {
+			              "Role": "dim_company.is_zelle_owner"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_companies_have_is_zelle_owners"
+			        }
+			      ]
+			    },
+			    "dim_company_has_company_key": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_company"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_company": {
+			          "Target": {
+			            "Entity": "dim_company"
+			          }
+			        },
+			        "dim_company.company_key": {
+			          "Target": {
+			            "Entity": "dim_company.company_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_company"
+			            },
+			            "Object": {
+			              "Role": "dim_company.company_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_companies_have_company_keys"
+			        }
+			      ]
+			    },
+			    "dim_geography_has_region": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_geography"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_geography": {
+			          "Target": {
+			            "Entity": "dim_geography"
+			          }
+			        },
+			        "dim_geography.region": {
+			          "Target": {
+			            "Entity": "dim_geography.region"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_geography"
+			            },
+			            "Object": {
+			              "Role": "dim_geography.region"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_geographies_have_regions"
+			        }
+			      ]
+			    },
+			    "dim_geography_has_state_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_geography"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_geography": {
+			          "Target": {
+			            "Entity": "dim_geography"
+			          }
+			        },
+			        "dim_geography.state_name": {
+			          "Target": {
+			            "Entity": "dim_geography.state_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_geography"
+			            },
+			            "Object": {
+			              "Role": "dim_geography.state_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_geographies_have_state_names"
+			        }
+			      ]
+			    },
+			    "dim_geography_has_state_code": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_geography"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_geography": {
+			          "Target": {
+			            "Entity": "dim_geography"
+			          }
+			        },
+			        "dim_geography.state_code": {
+			          "Target": {
+			            "Entity": "dim_geography.state_code"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_geography"
+			            },
+			            "Object": {
+			              "Role": "dim_geography.state_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_geographies_have_state_codes"
+			        }
+			      ]
+			    },
+			    "dim_geography_has_geography_key": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_geography"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_geography": {
+			          "Target": {
+			            "Entity": "dim_geography"
+			          }
+			        },
+			        "dim_geography.geography_key": {
+			          "Target": {
+			            "Entity": "dim_geography.geography_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_geography"
+			            },
+			            "Object": {
+			              "Role": "dim_geography.geography_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_geographies_have_geography_keys"
+			        }
+			      ]
+			    },
+			    "dim_issue_has_fraud_type": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_issue"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_issue": {
+			          "Target": {
+			            "Entity": "dim_issue"
+			          }
+			        },
+			        "dim_issue.fraud_type": {
+			          "Target": {
+			            "Entity": "dim_issue.fraud_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_issue"
+			            },
+			            "Object": {
+			              "Role": "dim_issue.fraud_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_issues_have_fraud_types"
+			        }
+			      ]
+			    },
+			    "dim_issue_has_is_fraud_related": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_issue"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_issue": {
+			          "Target": {
+			            "Entity": "dim_issue"
+			          }
+			        },
+			        "dim_issue.is_fraud_related": {
+			          "Target": {
+			            "Entity": "dim_issue.is_fraud_related"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_issue"
+			            },
+			            "Object": {
+			              "Role": "dim_issue.is_fraud_related"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_issues_have_is_fraud_related"
+			        }
+			      ]
+			    },
+			    "dim_issue_has_sub_issue": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_issue"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_issue": {
+			          "Target": {
+			            "Entity": "dim_issue"
+			          }
+			        },
+			        "dim_issue.sub_issue": {
+			          "Target": {
+			            "Entity": "dim_issue.sub_issue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_issue"
+			            },
+			            "Object": {
+			              "Role": "dim_issue.sub_issue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_issues_have_sub_issues"
+			        }
+			      ]
+			    },
+			    "dim_issue_has_issue": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_issue"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_issue": {
+			          "Target": {
+			            "Entity": "dim_issue"
+			          }
+			        },
+			        "dim_issue.issue": {
+			          "Target": {
+			            "Entity": "dim_issue.issue"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_issue"
+			            },
+			            "Object": {
+			              "Role": "dim_issue.issue"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_issues_have_issues"
+			        }
+			      ]
+			    },
+			    "dim_issue_has_issue_key": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_issue"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_issue": {
+			          "Target": {
+			            "Entity": "dim_issue"
+			          }
+			        },
+			        "dim_issue.issue_key": {
+			          "Target": {
+			            "Entity": "dim_issue.issue_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_issue"
+			            },
+			            "Object": {
+			              "Role": "dim_issue.issue_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_issues_have_issue_keys"
+			        }
+			      ]
+			    },
+			    "dim_date_has_is_weekend": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_date"
 			      },
@@ -6798,36 +7968,1111 @@ cultureInfo en-US
 			          }
 			        }
 			      },
-			      "Conditions": [
-			        {
-			          "Target": {
-			            "Role": "dim_date.is_weekend"
-			          },
-			          "Operator": "Equals",
-			          "Value": {
-			            "Boolean": [
-			              true
-			            ]
-			          }
-			        }
-			      ],
 			      "Phrasings": [
 			        {
-			          "Adjective": {
+			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_date"
 			            },
-			            "Adjectives": [
-			              {
-			                "weekend": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ]
+			            "Object": {
+			              "Role": "dim_date.is_weekend"
+			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "some_dim_dates_are_weekend_dim_dates"
+			          "ID": "dim_dates_have_is_weekends"
+			        }
+			      ]
+			    },
+			    "dim_date_has_day_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.day_name": {
+			          "Target": {
+			            "Entity": "dim_date.day_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.day_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_day_names"
+			        }
+			      ]
+			    },
+			    "dim_date_has_day_of_week": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.day_of_week": {
+			          "Target": {
+			            "Entity": "dim_date.day_of_week"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.day_of_week"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_day_of_week"
+			        }
+			      ]
+			    },
+			    "dim_date_has_day": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.day": {
+			          "Target": {
+			            "Entity": "dim_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_days"
+			        }
+			      ]
+			    },
+			    "dim_date_has_month_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.month_name": {
+			          "Target": {
+			            "Entity": "dim_date.month_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.month_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_month_names"
+			        }
+			      ]
+			    },
+			    "dim_date_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.month": {
+			          "Target": {
+			            "Entity": "dim_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_months"
+			        }
+			      ]
+			    },
+			    "dim_date_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.quarter": {
+			          "Target": {
+			            "Entity": "dim_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_quarters"
+			        }
+			      ]
+			    },
+			    "dim_date_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.year": {
+			          "Target": {
+			            "Entity": "dim_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_years"
+			        }
+			      ]
+			    },
+			    "dim_date_has_full_date": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.full_date": {
+			          "Target": {
+			            "Entity": "dim_date.full_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.full_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_full_dates"
+			        }
+			      ]
+			    },
+			    "dim_date_has_date_key": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.date_key": {
+			          "Target": {
+			            "Entity": "dim_date.date_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.date_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_date_keys"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_got_any_relief": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.got_any_relief": {
+			          "Target": {
+			            "Entity": "fct_complaint.got_any_relief"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.got_any_relief"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_got_any_reliefs"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_got_monetary_relief": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.got_monetary_relief": {
+			          "Target": {
+			            "Entity": "fct_complaint.got_monetary_relief"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.got_monetary_relief"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_got_monetary_reliefs"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_is_closed": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.is_closed": {
+			          "Target": {
+			            "Entity": "fct_complaint.is_closed"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.is_closed"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_is_closed"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_submitted_via": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.submitted_via": {
+			          "Target": {
+			            "Entity": "fct_complaint.submitted_via"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.submitted_via"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_submitted_via"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "fct_complaint.submitted_via"
+			            },
+			            "Verbs": [
+			              {
+			                "submit": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "fct_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "submitted_via_submit_fct_complaints"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_timely_response": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.timely_response": {
+			          "Target": {
+			            "Entity": "fct_complaint.timely_response"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.timely_response"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_timely_responses"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_company_response": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.company_response": {
+			          "Target": {
+			            "Entity": "fct_complaint.company_response"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.company_response"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_company_responses"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_is_fraud_complaint": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.is_fraud_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint.is_fraud_complaint"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.is_fraud_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_is_fraud_complaints"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_complaint_id": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "fct_complaint.complaint_id": {
+			          "Target": {
+			            "Entity": "fct_complaint.complaint_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint.complaint_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_complaint_ids"
+			        }
+			      ]
+			    },
+			    "dim_company_has_company_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_company"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_company": {
+			          "Target": {
+			            "Entity": "dim_company"
+			          }
+			        },
+			        "dim_company.company_name": {
+			          "Target": {
+			            "Entity": "dim_company.company_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_company"
+			            },
+			            "Object": {
+			              "Role": "dim_company.company_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_companies_have_company_names"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dim_company"
+			            },
+			            "Name": {
+			              "Role": "dim_company.company_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "company_names_are_names_IDs_of_dim_companies"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_monetary_relief_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_monetary_relief_rate": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_monetary_relief_rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_monetary_relief_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_monetary_relief_rate"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_fraud_per_10B_deposits_current_ann_": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.fraud_per_10B_deposits_current_ann_": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_per_10B_deposits_current_ann_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_per_10B_deposits_current_ann_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_fraud_per_10B_deposits_current_ann_"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_per_10B_deposits_prior_year": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_per_10B_deposits_prior_year": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_per_10B_deposits_prior_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_per_10B_deposits_prior_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_per_10B_deposits_prior_year"
+			        }
+			      ]
+			    },
+			    "bank_size_has_entity__measure_fraud_per_10B_deposits_prior_year": {
+			      "Binding": {
+			        "ConceptualEntity": "bank_size"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bank_size": {
+			          "Target": {
+			            "Entity": "bank_size"
+			          }
+			        },
+			        "entity__measure.fraud_per_10B_deposits_prior_year": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_per_10B_deposits_prior_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bank_size"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_per_10B_deposits_prior_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bank_sizes_have_fraud_per_10B_deposits_prior_year"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_data_cutoff_date": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.data_cutoff_date": {
+			          "Target": {
+			            "Entity": "entity__measure.data_cutoff_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.data_cutoff_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_data_cutoff_date"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_data_cutoff_date": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.data_cutoff_date": {
+			          "Target": {
+			            "Entity": "entity__measure.data_cutoff_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.data_cutoff_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_data_cutoff_date"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_fraud_YoY_": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.fraud_YoY_": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_YoY_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_YoY_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_fraud_YoY_"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_relief_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_relief_rate": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_relief_rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_relief_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_relief_rate"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_share": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_share": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_share"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_share"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_share"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_complaints": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_complaints": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_complaints"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_complaints"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_complaints"
+			        }
+			      ]
+			    },
+			    "dim_geography_in_region": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_geography"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_geography": {
+			          "Target": {
+			            "Entity": "dim_geography"
+			          }
+			        },
+			        "dim_geography.region": {
+			          "Target": {
+			            "Entity": "dim_geography.region"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_geography.region"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_geography"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_geography.region"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_geographies_are_in_regions"
+			        }
+			      ]
+			    },
+			    "dim_geography_in_state_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_geography"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_geography": {
+			          "Target": {
+			            "Entity": "dim_geography"
+			          }
+			        },
+			        "dim_geography.state_name": {
+			          "Target": {
+			            "Entity": "dim_geography.state_name"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_geography.state_name"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_geography"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_geography.state_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_geographies_are_in_state_names"
+			        }
+			      ]
+			    },
+			    "dim_geography_in_state_code": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_geography"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_geography": {
+			          "Target": {
+			            "Entity": "dim_geography"
+			          }
+			        },
+			        "dim_geography.state_code": {
+			          "Target": {
+			            "Entity": "dim_geography.state_code"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_geography.state_code"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_geography"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_geography.state_code"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_geographies_are_in_state_codes"
 			        }
 			      ]
 			    },
@@ -6886,1053 +9131,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fct_complaint_submitted_via_submit_fct_complaint": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint.submitted_via": {
-			          "Target": {
-			            "Entity": "fct_complaint.submitted_via"
-			          }
-			        },
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "fct_complaint.submitted_via"
-			            },
-			            "Verbs": [
-			              {
-			                "submit": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "fct_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.95,
-			          "ID": "submitted_via_submit_fct_complaints"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.submitted_via"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_submitted_via"
-			        }
-			      ]
-			    },
-			    "dim_geography_in_state_code": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_geography"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_geography": {
-			          "Target": {
-			            "Entity": "dim_geography"
-			          }
-			        },
-			        "dim_geography.state_code": {
-			          "Target": {
-			            "Entity": "dim_geography.state_code"
-			          }
-			        }
-			      },
-			      "SemanticSlots": {
-			        "Where": {
-			          "Role": "dim_geography.state_code"
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_geography"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "dim_geography.state_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_geographies_are_in_state_codes"
-			        }
-			      ]
-			    },
-			    "dim_geography_in_state_name": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_geography"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_geography": {
-			          "Target": {
-			            "Entity": "dim_geography"
-			          }
-			        },
-			        "dim_geography.state_name": {
-			          "Target": {
-			            "Entity": "dim_geography.state_name"
-			          }
-			        }
-			      },
-			      "SemanticSlots": {
-			        "Where": {
-			          "Role": "dim_geography.state_name"
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_geography"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "dim_geography.state_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_geographies_are_in_state_names"
-			        }
-			      ]
-			    },
-			    "dim_geography_in_region": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_geography"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_geography": {
-			          "Target": {
-			            "Entity": "dim_geography"
-			          }
-			        },
-			        "dim_geography.region": {
-			          "Target": {
-			            "Entity": "dim_geography.region"
-			          }
-			        }
-			      },
-			      "SemanticSlots": {
-			        "Where": {
-			          "Role": "dim_geography.region"
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_geography"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "dim_geography.region"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_geographies_are_in_regions"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_complaints": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_complaints": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_complaints"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_complaints"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_complaints"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_share": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_share": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_share"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_share"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_share"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_relief_rate": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_relief_rate": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_relief_rate"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_relief_rate"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_relief_rate"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_fraud_YoY_": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.fraud_YoY_": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_YoY_"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_YoY_"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_fraud_YoY_"
-			        }
-			      ]
-			    },
-			    "dim_date_has_entity__measure_data_cutoff_date": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "entity__measure.data_cutoff_date": {
-			          "Target": {
-			            "Entity": "entity__measure.data_cutoff_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.data_cutoff_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_data_cutoff_date"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_data_cutoff_date": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.data_cutoff_date": {
-			          "Target": {
-			            "Entity": "entity__measure.data_cutoff_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.data_cutoff_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_data_cutoff_date"
-			        }
-			      ]
-			    },
-			    "bank_size_has_entity__measure_fraud_per_10B_deposits_prior_year": {
-			      "Binding": {
-			        "ConceptualEntity": "bank_size"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "bank_size": {
-			          "Target": {
-			            "Entity": "bank_size"
-			          }
-			        },
-			        "entity__measure.fraud_per_10B_deposits_prior_year": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_per_10B_deposits_prior_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "bank_size"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_per_10B_deposits_prior_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "bank_sizes_have_fraud_per_10B_deposits_prior_year"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_per_10B_deposits_prior_year": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_per_10B_deposits_prior_year": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_per_10B_deposits_prior_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_per_10B_deposits_prior_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_per_10B_deposits_prior_year"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_fraud_per_10B_deposits_current_ann_": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.fraud_per_10B_deposits_current_ann_": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_per_10B_deposits_current_ann_"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_per_10B_deposits_current_ann_"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_fraud_per_10B_deposits_current_ann_"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_monetary_relief_rate": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_monetary_relief_rate": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_monetary_relief_rate"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_monetary_relief_rate"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_monetary_relief_rate"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_complaint_id": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "fct_complaint.complaint_id": {
-			          "Target": {
-			            "Entity": "fct_complaint.complaint_id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.complaint_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_complaint_ids"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_is_fraud_complaint": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "fct_complaint.is_fraud_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint.is_fraud_complaint"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.is_fraud_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_is_fraud_complaints"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_company_response": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "fct_complaint.company_response": {
-			          "Target": {
-			            "Entity": "fct_complaint.company_response"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.company_response"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_company_responses"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_timely_response": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "fct_complaint.timely_response": {
-			          "Target": {
-			            "Entity": "fct_complaint.timely_response"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.timely_response"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_timely_responses"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_is_closed": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "fct_complaint.is_closed": {
-			          "Target": {
-			            "Entity": "fct_complaint.is_closed"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.is_closed"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_is_closed"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_got_monetary_relief": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "fct_complaint.got_monetary_relief": {
-			          "Target": {
-			            "Entity": "fct_complaint.got_monetary_relief"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.got_monetary_relief"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_got_monetary_reliefs"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_got_any_relief": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "fct_complaint.got_any_relief": {
-			          "Target": {
-			            "Entity": "fct_complaint.got_any_relief"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint.got_any_relief"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_got_any_reliefs"
-			        }
-			      ]
-			    },
-			    "dim_date_has_date_key": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.date_key": {
-			          "Target": {
-			            "Entity": "dim_date.date_key"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.date_key"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_date_keys"
-			        }
-			      ]
-			    },
-			    "dim_date_has_full_date": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.full_date": {
-			          "Target": {
-			            "Entity": "dim_date.full_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.full_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_full_dates"
-			        }
-			      ]
-			    },
-			    "dim_date_has_year": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.year": {
-			          "Target": {
-			            "Entity": "dim_date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_years"
-			        }
-			      ]
-			    },
-			    "dim_date_has_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.quarter": {
-			          "Target": {
-			            "Entity": "dim_date.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_quarters"
-			        }
-			      ]
-			    },
-			    "dim_date_has_month": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.month": {
-			          "Target": {
-			            "Entity": "dim_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_months"
-			        }
-			      ]
-			    },
-			    "dim_date_has_month_name": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.month_name": {
-			          "Target": {
-			            "Entity": "dim_date.month_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.month_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_month_names"
-			        }
-			      ]
-			    },
-			    "dim_date_has_day": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.day": {
-			          "Target": {
-			            "Entity": "dim_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_days"
-			        }
-			      ]
-			    },
-			    "dim_date_has_day_of_week": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.day_of_week": {
-			          "Target": {
-			            "Entity": "dim_date.day_of_week"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.day_of_week"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_day_of_week"
-			        }
-			      ]
-			    },
-			    "dim_date_has_day_name": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.day_name": {
-			          "Target": {
-			            "Entity": "dim_date.day_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.day_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_day_names"
-			        }
-			      ]
-			    },
-			    "dim_date_has_is_weekend": {
+			    "dim_date_is_weekend": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_date"
 			      },
@@ -7949,650 +9148,40 @@ cultureInfo en-US
 			          }
 			        }
 			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "dim_date.is_weekend"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
 			      "Phrasings": [
 			        {
-			          "Attribute": {
+			          "Adjective": {
 			            "Subject": {
 			              "Role": "dim_date"
 			            },
-			            "Object": {
-			              "Role": "dim_date.is_weekend"
-			            }
+			            "Adjectives": [
+			              {
+			                "weekend": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_is_weekends"
+			          "ID": "some_dim_dates_are_weekend_dim_dates"
 			        }
 			      ]
 			    },
-			    "dim_issue_has_issue_key": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_issue"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_issue": {
-			          "Target": {
-			            "Entity": "dim_issue"
-			          }
-			        },
-			        "dim_issue.issue_key": {
-			          "Target": {
-			            "Entity": "dim_issue.issue_key"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_issue"
-			            },
-			            "Object": {
-			              "Role": "dim_issue.issue_key"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_issues_have_issue_keys"
-			        }
-			      ]
-			    },
-			    "dim_issue_has_issue": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_issue"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_issue": {
-			          "Target": {
-			            "Entity": "dim_issue"
-			          }
-			        },
-			        "dim_issue.issue": {
-			          "Target": {
-			            "Entity": "dim_issue.issue"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_issue"
-			            },
-			            "Object": {
-			              "Role": "dim_issue.issue"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_issues_have_issues"
-			        }
-			      ]
-			    },
-			    "dim_issue_has_sub_issue": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_issue"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_issue": {
-			          "Target": {
-			            "Entity": "dim_issue"
-			          }
-			        },
-			        "dim_issue.sub_issue": {
-			          "Target": {
-			            "Entity": "dim_issue.sub_issue"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_issue"
-			            },
-			            "Object": {
-			              "Role": "dim_issue.sub_issue"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_issues_have_sub_issues"
-			        }
-			      ]
-			    },
-			    "dim_issue_has_is_fraud_related": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_issue"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_issue": {
-			          "Target": {
-			            "Entity": "dim_issue"
-			          }
-			        },
-			        "dim_issue.is_fraud_related": {
-			          "Target": {
-			            "Entity": "dim_issue.is_fraud_related"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_issue"
-			            },
-			            "Object": {
-			              "Role": "dim_issue.is_fraud_related"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_issues_have_is_fraud_related"
-			        }
-			      ]
-			    },
-			    "dim_issue_has_fraud_type": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_issue"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_issue": {
-			          "Target": {
-			            "Entity": "dim_issue"
-			          }
-			        },
-			        "dim_issue.fraud_type": {
-			          "Target": {
-			            "Entity": "dim_issue.fraud_type"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_issue"
-			            },
-			            "Object": {
-			              "Role": "dim_issue.fraud_type"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_issues_have_fraud_types"
-			        }
-			      ]
-			    },
-			    "dim_geography_has_geography_key": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_geography"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_geography": {
-			          "Target": {
-			            "Entity": "dim_geography"
-			          }
-			        },
-			        "dim_geography.geography_key": {
-			          "Target": {
-			            "Entity": "dim_geography.geography_key"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_geography"
-			            },
-			            "Object": {
-			              "Role": "dim_geography.geography_key"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_geographies_have_geography_keys"
-			        }
-			      ]
-			    },
-			    "dim_geography_has_state_code": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_geography"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_geography": {
-			          "Target": {
-			            "Entity": "dim_geography"
-			          }
-			        },
-			        "dim_geography.state_code": {
-			          "Target": {
-			            "Entity": "dim_geography.state_code"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_geography"
-			            },
-			            "Object": {
-			              "Role": "dim_geography.state_code"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_geographies_have_state_codes"
-			        }
-			      ]
-			    },
-			    "dim_geography_has_state_name": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_geography"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_geography": {
-			          "Target": {
-			            "Entity": "dim_geography"
-			          }
-			        },
-			        "dim_geography.state_name": {
-			          "Target": {
-			            "Entity": "dim_geography.state_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_geography"
-			            },
-			            "Object": {
-			              "Role": "dim_geography.state_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_geographies_have_state_names"
-			        }
-			      ]
-			    },
-			    "dim_geography_has_region": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_geography"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_geography": {
-			          "Target": {
-			            "Entity": "dim_geography"
-			          }
-			        },
-			        "dim_geography.region": {
-			          "Target": {
-			            "Entity": "dim_geography.region"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_geography"
-			            },
-			            "Object": {
-			              "Role": "dim_geography.region"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_geographies_have_regions"
-			        }
-			      ]
-			    },
-			    "dim_company_has_company_key": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_company"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
-			        },
-			        "dim_company.company_key": {
-			          "Target": {
-			            "Entity": "dim_company.company_key"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_company"
-			            },
-			            "Object": {
-			              "Role": "dim_company.company_key"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_companies_have_company_keys"
-			        }
-			      ]
-			    },
-			    "dim_company_has_is_zelle_owner": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_company"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
-			        },
-			        "dim_company.is_zelle_owner": {
-			          "Target": {
-			            "Entity": "dim_company.is_zelle_owner"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_company"
-			            },
-			            "Object": {
-			              "Role": "dim_company.is_zelle_owner"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_companies_have_is_zelle_owners"
-			        }
-			      ]
-			    },
-			    "dim_product_has_product_key": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_product"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_product": {
-			          "Target": {
-			            "Entity": "dim_product"
-			          }
-			        },
-			        "dim_product.product_key": {
-			          "Target": {
-			            "Entity": "dim_product.product_key"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_product"
-			            },
-			            "Object": {
-			              "Role": "dim_product.product_key"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_products_have_product_keys"
-			        }
-			      ]
-			    },
-			    "dim_product_has_product_group": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_product"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_product": {
-			          "Target": {
-			            "Entity": "dim_product"
-			          }
-			        },
-			        "dim_product.product_group": {
-			          "Target": {
-			            "Entity": "dim_product.product_group"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_product"
-			            },
-			            "Object": {
-			              "Role": "dim_product.product_group"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_products_have_product_groups"
-			        }
-			      ]
-			    },
-			    "bank_size_has_company_name": {
-			      "Binding": {
-			        "ConceptualEntity": "bank_size"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "bank_size": {
-			          "Target": {
-			            "Entity": "bank_size"
-			          }
-			        },
-			        "bank_size.company_name": {
-			          "Target": {
-			            "Entity": "bank_size.company_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "bank_size"
-			            },
-			            "Object": {
-			              "Role": "bank_size.company_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "bank_sizes_have_company_names"
-			        }
-			      ]
-			    },
-			    "bank_size_has_total_deposits_bn": {
-			      "Binding": {
-			        "ConceptualEntity": "bank_size"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "bank_size": {
-			          "Target": {
-			            "Entity": "bank_size"
-			          }
-			        },
-			        "bank_size.total_deposits_bn": {
-			          "Target": {
-			            "Entity": "bank_size.total_deposits_bn"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "bank_size"
-			            },
-			            "Object": {
-			              "Role": "bank_size.total_deposits_bn"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "bank_sizes_have_total_deposits_bns"
-			        }
-			      ]
-			    },
-			    "bank_size_has_as_of_date": {
-			      "Binding": {
-			        "ConceptualEntity": "bank_size"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "bank_size": {
-			          "Target": {
-			            "Entity": "bank_size"
-			          }
-			        },
-			        "bank_size.as_of_date": {
-			          "Target": {
-			            "Entity": "bank_size.as_of_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "bank_size"
-			            },
-			            "Object": {
-			              "Role": "bank_size.as_of_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "bank_sizes_have_as_of_date"
-			        }
-			      ]
-			    },
-			    "bank_size_has_source": {
-			      "Binding": {
-			        "ConceptualEntity": "bank_size"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "bank_size": {
-			          "Target": {
-			            "Entity": "bank_size"
-			          }
-			        },
-			        "bank_size.source": {
-			          "Target": {
-			            "Entity": "bank_size.source"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "bank_size"
-			            },
-			            "Object": {
-			              "Role": "bank_size.source"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "bank_sizes_have_sources"
-			        }
-			      ]
-			    },
-			    "bank_size_has_include_in_normalized": {
-			      "Binding": {
-			        "ConceptualEntity": "bank_size"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "bank_size": {
-			          "Target": {
-			            "Entity": "bank_size"
-			          }
-			        },
-			        "bank_size.include_in_normalized": {
-			          "Target": {
-			            "Entity": "bank_size.include_in_normalized"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "bank_size"
-			            },
-			            "Object": {
-			              "Role": "bank_size.include_in_normalized"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "bank_sizes_have_include_in_normalized"
-			        }
-			      ]
-			    },
-			    "bank_size_has_note": {
-			      "Binding": {
-			        "ConceptualEntity": "bank_size"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "bank_size": {
-			          "Target": {
-			            "Entity": "bank_size"
-			          }
-			        },
-			        "bank_size.note": {
-			          "Target": {
-			            "Entity": "bank_size.note"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "bank_size"
-			            },
-			            "Object": {
-			              "Role": "bank_size.note"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "bank_sizes_have_notes"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_total_complaints": {
+			    "fct_complaint_is_closed": {
 			      "Binding": {
 			        "ConceptualEntity": "fct_complaints"
 			      },
@@ -8603,381 +9192,42 @@ cultureInfo en-US
 			            "Entity": "fct_complaint"
 			          }
 			        },
-			        "entity__measure.total_complaints": {
+			        "fct_complaint.is_closed": {
 			          "Target": {
-			            "Entity": "entity__measure.total_complaints"
+			            "Entity": "fct_complaint.is_closed"
 			          }
 			        }
 			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "fct_complaint.is_closed"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
 			      "Phrasings": [
 			        {
-			          "Attribute": {
+			          "Adjective": {
 			            "Subject": {
 			              "Role": "fct_complaint"
 			            },
-			            "Object": {
-			              "Role": "entity__measure.total_complaints"
-			            }
+			            "Adjectives": [
+			              {
+			                "closed": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_total_complaints"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_closed_fraud_complaints": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.closed_fraud_complaints": {
-			          "Target": {
-			            "Entity": "entity__measure.closed_fraud_complaints"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.closed_fraud_complaints"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_closed_fraud_complaints"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_any_relief": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_any_relief": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_any_relief"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_any_relief"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_any_relief"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_days_elapsed": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.days_elapsed": {
-			          "Target": {
-			            "Entity": "entity__measure.days_elapsed"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.days_elapsed"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_days_elapsed"
-			        }
-			      ]
-			    },
-			    "dim_date_has_entity__measure_current_year": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "entity__measure.current_year": {
-			          "Target": {
-			            "Entity": "entity__measure.current_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.current_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_current_year"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_current_year": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.current_year": {
-			          "Target": {
-			            "Entity": "entity__measure.current_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.current_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_current_year"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_prior_year": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_prior_year": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_prior_year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_prior_year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_prior_year"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_entity__measure_fraud_current_YTD": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "entity__measure.fraud_current_YTD": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_current_YTD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_current_YTD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_fraud_current_YTD"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_fraud_current_annualized": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.fraud_current_annualized": {
-			          "Target": {
-			            "Entity": "entity__measure.fraud_current_annualized"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fraud_current_annualized"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_fraud_current_annualized"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_dim_date": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "dim_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_dim_dates"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_fct_complaints"
-			        }
-			      ]
-			    },
-			    "fct_complaint_has_dim_company": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "dim_company"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_dim_companies"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_company"
-			            },
-			            "Object": {
-			              "Role": "fct_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_companies_have_fct_complaints"
+			          "ID": "some_fct_complaints_are_closed_fct_complaints"
 			        }
 			      ]
 			    },

@@ -35,7 +35,5 @@ table dim_product
 				in
 				    analytics_dim_product
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 

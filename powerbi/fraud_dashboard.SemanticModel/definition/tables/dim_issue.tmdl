@@ -52,7 +52,5 @@ table dim_issue
 				in
 				    analytics_dim_issue
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 

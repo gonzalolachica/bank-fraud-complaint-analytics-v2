@@ -4,10 +4,10 @@
   "position": {
     "x": 1568,
     "y": 32,
-    "z": 6000,
+    "z": 5000,
     "height": 64,
     "width": 320,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "dim_company"
                     }
                   },
-                  "Property": "company_name"
+                  "Property": "company_short"
                 }
               },
-              "queryRef": "dim_company.company_name",
-              "nativeQueryRef": "company_name",
+              "queryRef": "dim_company.company_short",
+              "nativeQueryRef": "company_short",
               "active": true,
               "displayName": "Bank"
             }

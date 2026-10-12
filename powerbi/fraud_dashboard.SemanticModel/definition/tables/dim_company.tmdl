@@ -27,6 +27,14 @@ table dim_company
 
 		annotation SummarizationSetBy = Automatic
 
+	column company_short
+		dataType: string
+		lineageTag: e6bc4f39-df1e-4d19-9aab-9899452e9657
+		summarizeBy: none
+		sourceColumn: company_short
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_company = m
 		mode: import
 		source =
@@ -35,8 +43,6 @@ table dim_company
 				    analytics_dim_company = Source{[Schema="analytics",Item="dim_company"]}[Data]
 				in
 				    analytics_dim_company
-
-	changedProperty = Name
 
 	annotation PBI_ResultType = Table
 
