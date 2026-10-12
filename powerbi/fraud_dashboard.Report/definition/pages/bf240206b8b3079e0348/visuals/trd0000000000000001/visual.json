@@ -6,7 +6,7 @@
     "y": 600,
     "z": 3000,
     "height": 432,
-    "width": 960,
+    "width": 1032,
     "tabOrder": 3000
   },
   "visual": {
@@ -190,14 +190,21 @@
                   "Value": "true"
                 }
               }
-            },
-            "labelDisplayUnits": {
+            }
+          }
+        },
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "false"
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "_Measures.Fraud Complaints (Annualized CY)"
           }
         }
       ],
@@ -256,7 +263,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "15D"
                 }
               }
             },

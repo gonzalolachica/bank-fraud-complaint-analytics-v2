@@ -2,11 +2,11 @@ table _Measures
 	lineageTag: e8004721-c205-4635-8b81-2843713e17d1
 
 	measure 'Total Complaints' = COUNTROWS (fct_complaints)
-		formatString: 0
+		formatString: #,0
 		lineageTag: f887aa08-864c-4de8-a5cd-3da4cf7943ac
 
 	measure 'Fraud Complaints' = CALCULATE( [Total Complaints], fct_complaints[is_fraud_complaint] = TRUE () )
-		formatString: 0
+		formatString: #,0
 		lineageTag: f528af6b-15d1-4dec-8e96-7d591b3f305d
 
 	measure 'Fraud Share' = DIVIDE( [Fraud Complaints], [Total Complaints] )
@@ -16,11 +16,11 @@ table _Measures
 	measure 'Closed Fraud Complaints' =
 			
 			CALCULATE ( [Fraud Complaints], fct_complaints[is_closed] = TRUE () )
-		formatString: 0
+		formatString: #,0
 		lineageTag: 4c7046b2-b1d3-422c-a242-7fc40ae5dd5b
 
 	measure 'Fraud Any Relief' = CALCULATE([Fraud Complaints], fct_complaints[got_any_relief] =TRUE () )
-		formatString: 0
+		formatString: #,0
 		lineageTag: 01d57edf-5dbc-4705-92af-88b399b55504
 
 	measure 'Fraud Relief Rate' = DIVIDE([Fraud Any Relief],[Closed Fraud Complaints])
@@ -56,7 +56,7 @@ table _Measures
 			VAR cy = [Current Year]
 			RETURN
 			    CALCULATE ( [Fraud Complaints], REMOVEFILTERS ( dim_date ), dim_date[year] = cy - 1 )
-		formatString: 0
+		formatString: #,0
 		lineageTag: 908f8cfd-7cea-4b3f-8eeb-db328d795fe1
 
 	measure 'Fraud Current YTD' =
@@ -64,13 +64,13 @@ table _Measures
 			VAR cy = [Current Year]
 			RETURN
 			    CALCULATE ( [Fraud Complaints], REMOVEFILTERS ( dim_date ), dim_date[year] = cy )
-		formatString: 0
+		formatString: #,0
 		lineageTag: 384ed1a3-e9c3-467c-8033-cac091319d52
 
 	measure 'Fraud Current Annualized' =
 			
 			DIVIDE ( [Fraud Current YTD] * 365, [Days Elapsed] )
-		formatString: 0
+		formatString: #,0
 		lineageTag: d84ad181-d75b-4b79-ba51-e16c9b548d00
 
 	measure 'Fraud YoY %' =
@@ -108,8 +108,118 @@ table _Measures
 			        DIVIDE ( actual * 365, [Days Elapsed] ),
 			        actual
 			    )
-		formatString: 0
+		formatString: #,0
 		lineageTag: 3ab8884a-4a81-4978-95a3-0984c849aaec
+
+	measure 'Fraud Baseline (Prior 12M Avg)' =
+			
+			VAR cur = MAX ( dim_date[month_start] )
+			VAR prior12 =
+			    CALCULATETABLE (
+			        VALUES ( dim_date[month_start] ),
+			        REMOVEFILTERS ( dim_date ),
+			        dim_date[month_start] >= EDATE ( cur, -12 ),
+			        dim_date[month_start] <  cur
+			    )
+			RETURN
+			    IF (
+			        COUNTROWS ( prior12 ) = 12,
+			        AVERAGEX (
+			            prior12,
+			            VAR m = dim_date[month_start]
+			            RETURN
+			                CALCULATE ( [Fraud Complaints], REMOVEFILTERS ( dim_date ), dim_date[month_start] = m )
+			        )
+			    )
+		formatString: 0.0
+		lineageTag: 381d820a-6daa-42fb-a0fc-92fc5007fdd5
+
+	measure 'Fraud Baseline SD (Prior 12M)' =
+			
+			VAR cur = MAX ( dim_date[month_start] )
+			VAR prior12 =
+			    CALCULATETABLE (
+			        VALUES ( dim_date[month_start] ),
+			        REMOVEFILTERS ( dim_date ),
+			        dim_date[month_start] >= EDATE ( cur, -12 ),
+			        dim_date[month_start] <  cur
+			    )
+			RETURN
+			    IF (
+			        COUNTROWS ( prior12 ) = 12,
+			        STDEVX.S (
+			            prior12,
+			            VAR m = dim_date[month_start]
+			            RETURN
+			                CALCULATE ( [Fraud Complaints], REMOVEFILTERS ( dim_date ), dim_date[month_start] = m )
+			        )
+			    )
+		formatString: 0.0
+		lineageTag: ca3f6a6c-e1ce-4b89-a406-985fad5e5b13
+
+	measure 'Fraud Alert Threshold (Upper)' =
+			
+			IF ( NOT ISBLANK ( [Fraud Monthly (Complete Months)] ), [Fraud Baseline (Prior 12M Avg)] + 2 * [Fraud Baseline SD (Prior 12M)] )
+		formatString: 0.0
+		lineageTag: 7856feb2-cb24-49d4-a7ae-3aec23a79e6f
+
+	measure 'Fraud Band (Lower)' =
+			
+			IF ( NOT ISBLANK ( [Fraud Monthly (Complete Months)] ), MAX ( 0, [Fraud Baseline (Prior 12M Avg)] - 2 * [Fraud Baseline SD (Prior 12M)] ) )
+		formatString: 0.0
+		lineageTag: 1a962b6b-351c-4b84-9397-5de99e7f2730
+
+	measure 'Fraud Alert (Above Threshold)' =
+			
+			VAR actual = [Fraud Monthly (Complete Months)]
+			VAR upper  = [Fraud Alert Threshold (Upper)]
+			RETURN
+			    IF ( NOT ISBLANK ( actual ) && NOT ISBLANK ( upper ) && actual > upper, actual )
+		formatString: #,0
+		lineageTag: fa401a0e-869a-4af2-bbac-7cca59510ecb
+
+	measure 'Fraud Monthly (Complete Months)' =
+			
+			VAR cur          = MAX ( dim_date[month_start] )
+			VAR lastComplete = EOMONTH ( [Data Cutoff Date], -1 )
+			RETURN
+			    IF ( cur <= lastComplete, [Fraud Complaints] )
+		formatString: #,0
+		lineageTag: 196f3d1f-fb55-4721-a760-62d56906b135
+
+	measure 'Fraud Alert Months' =
+			
+			COUNTROWS (
+			    FILTER ( VALUES ( dim_date[month_start] ),
+			             NOT ISBLANK ( [Fraud Alert (Above Threshold)] ) )
+			)
+		formatString: 0
+		lineageTag: 774502c3-fdd6-4706-b9ae-52a2117a1629
+
+	measure 'Fraud Alert Excess %' =
+
+			VAR alertN = [Fraud Alert (Above Threshold)]
+			VAR upper  = [Fraud Alert Threshold (Upper)]
+			RETURN
+			    IF ( NOT ISBLANK ( alertN ), DIVIDE ( alertN - upper, upper ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 93e84455-134a-4383-8cfe-73be248099a3
+
+	measure 'Fraud Alert Months (Last 12M)' =
+
+			VAR lastComplete = EOMONTH ( [Data Cutoff Date], -1 )
+			VAR firstMonth   = EDATE ( DATE ( YEAR ( lastComplete ), MONTH ( lastComplete ), 1 ), -11 )
+			VAR window12 =
+			    CALCULATETABLE (
+			        VALUES ( dim_date[month_start] ),
+			        REMOVEFILTERS ( dim_date ),
+			        dim_date[month_start] >= firstMonth,
+			        dim_date[month_start] <= lastComplete
+			    )
+			RETURN
+			    COUNTROWS ( FILTER ( window12, NOT ISBLANK ( [Fraud Alert (Above Threshold)] ) ) ) + 0
+		formatString: 0
+		lineageTag: e04d6171-d63a-4be4-b103-ae368b1c6846
 
 	partition _Measures = m
 		mode: import

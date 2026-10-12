@@ -78,7 +78,7 @@ models:
                   - "Scams"
                   - "Fraud alerts / freezes"
                   - "Money transfer - other (not clearly fraud)"
-                  
+
       - name: company_response
         data_type: text
         description: "Company's response to the consumer."
@@ -135,9 +135,17 @@ models:
       - name: month
         data_type: integer
         description: "Month number, 1-12."
+
       - name: month_name
         data_type: text
         description: "Full month name, no padding (FMMonth), e.g. 'May'."
+
+      - name: month_start
+        data_type: date
+        description: "First day of the month (e.g. 2026-03-01). Continuous monthly axis for trend and monitoring charts."
+        data_tests:
+          - not_null
+          
       - name: day
         data_type: integer
         description: "Day of the month, 1-31."
@@ -150,7 +158,7 @@ models:
       - name: is_weekend
         data_type: boolean
         description: "TRUE on Saturday and Sunday."
-
+        
   - name: dim_issue
     description: "One row per distinct issue / sub-issue pair, with the is_fraud_related flag and fraud_type label from the allow-list seed."
     config:

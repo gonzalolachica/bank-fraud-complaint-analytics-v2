@@ -29,7 +29,7 @@ table dim_company
 
 	column company_short
 		dataType: string
-		lineageTag: e6bc4f39-df1e-4d19-9aab-9899452e9657
+		lineageTag: 4903d298-b084-41af-ac23-a58769e01015
 		summarizeBy: none
 		sourceColumn: company_short
 

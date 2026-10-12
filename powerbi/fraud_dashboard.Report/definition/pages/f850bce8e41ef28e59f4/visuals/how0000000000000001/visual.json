@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "how0000000000000001",
+  "position": {
+    "x": 800,
+    "y": 150,
+    "z": 110,
+    "height": 130,
+    "width": 1080,
+    "tabOrder": 110
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "HOW ALERTS WORK",
+                    "textStyle": {
+                      "color": "#B4400F",
+                      "fontSize": "12pt",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Each month is compared with the 12 months before it. A month is an ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt"
+                    }
+                  },
+                  {
+                    "value": "alert",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " when its fraud complaints are more than 2 standard deviations above that 12-month average. Only complete months are judged. Pick a bank above: each bank is judged against its own normal, not against the others.",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

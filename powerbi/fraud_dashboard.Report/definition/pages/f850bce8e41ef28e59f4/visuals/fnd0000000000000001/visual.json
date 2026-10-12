@@ -1,0 +1,148 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "fnd0000000000000001",
+  "position": {
+    "x": 760,
+    "y": 790,
+    "z": 310,
+    "height": 250,
+    "width": 1120,
+    "tabOrder": 310
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "WHAT IT FOUND",
+                    "textStyle": {
+                      "color": "#B4400F",
+                      "fontSize": "12pt",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "\u2022 Truist broke its normal range 7 times since 2021, twice in the last 12 complete months (Sep 2025, Jan 2026), in step with its 2026 rise.",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "\u2022 January 2025 is the biggest spike in the data: 792 fraud complaints, 703 of them at Chase. Truist also flagged that month.",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "6pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "CAVEATS",
+                    "textStyle": {
+                      "color": "#B4400F",
+                      "fontSize": "12pt",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "\u2022 Small numbers: Truist gets roughly 40 to 50 fraud complaints a month, so random swings are large. An alert is a prompt to investigate, not proof.",
+                    "textStyle": {
+                      "color": "#4A4A4A",
+                      "fontSize": "10pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "\u2022 A spike raises the next 12 months of baseline (Jan 2025 widened the 2025\u201326 band), so later spikes are harder to flag.",
+                    "textStyle": {
+                      "color": "#4A4A4A",
+                      "fontSize": "10pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "\u2022 Complaints show customer pain, not fraud losses.",
+                    "textStyle": {
+                      "color": "#4A4A4A",
+                      "fontSize": "10pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

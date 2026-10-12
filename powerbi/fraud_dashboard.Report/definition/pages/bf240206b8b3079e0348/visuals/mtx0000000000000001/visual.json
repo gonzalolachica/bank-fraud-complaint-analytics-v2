@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "mtx0000000000000001",
   "position": {
-    "x": 1032,
+    "x": 1104,
     "y": 600,
     "z": 2000,
     "height": 432,
-    "width": 864,
+    "width": 792,
     "tabOrder": 2000
   },
   "visual": {
@@ -95,7 +95,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "15D"
                 }
               }
             }
@@ -115,7 +115,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "15D"
                 }
               }
             }
@@ -128,7 +128,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "15D"
                 }
               }
             }
@@ -196,15 +196,7 @@
       ],
       "grid": [
         {
-          "properties": {
-            "rowPadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "6D"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "columnWidth": [
@@ -213,13 +205,153 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "120.94154488517745D"
+                  "Value": "274.94705477672346D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "fct_complaints.fraud_type"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "133.96032852385667D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_company"
+                          }
+                        },
+                        "Property": "company_short"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Amex'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.13345111809562D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_company"
+                          }
+                        },
+                        "Property": "company_short"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Chase'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91.48026470923352D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_company"
+                          }
+                        },
+                        "Property": "company_short"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Truist'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.72038678018183D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_company"
+                        }
+                      },
+                      "Property": "company_short"
+                    }
+                  }
+                ]
+              }
+            ]
           }
         }
       ]
@@ -245,7 +377,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "15D"
                 }
               }
             },
@@ -300,7 +432,7 @@
             "name": {
               "expr": {
                 "Literal": {
-                  "Value": "'Minimal'"
+                  "Value": "'Default'"
                 }
               }
             }

@@ -17,10 +17,13 @@ SELECT
     EXTRACT(YEAR FROM d)::int                                       AS year,
     EXTRACT(QUARTER FROM d)::int                                    AS quarter,
     EXTRACT(MONTH FROM d)::int                                      AS month,
-    TO_CHAR(d, 'FMMonth')                                             AS month_name,
+    TO_CHAR(d, 'FMMonth')                                           AS month_name,
+    -- First day of the month: one value shared by every day in that month.
+    -- Gives Power BI a continuous monthly axis (Jan 2021 and Jan 2022 stay separate).
+    DATE_TRUNC('month', d)::date                                    AS month_start,
     EXTRACT(DAY FROM d)::int                                        AS day,
-    (EXTRACT(DOW FROM d)::int + 1)                                        AS day_of_week,
-    TO_CHAR(d, 'FMDay')                                               AS day_name,
+    (EXTRACT(DOW FROM d)::int + 1)                                  AS day_of_week,
+    TO_CHAR(d, 'FMDay')                                             AS day_name,
     CASE WHEN EXTRACT(DOW FROM d) IN (0, 6) THEN TRUE ELSE FALSE END AS is_weekend
 FROM bounds
 CROSS JOIN generate_series('2020-01-01'::date, bounds.end_date, '1 day'::interval) AS d
