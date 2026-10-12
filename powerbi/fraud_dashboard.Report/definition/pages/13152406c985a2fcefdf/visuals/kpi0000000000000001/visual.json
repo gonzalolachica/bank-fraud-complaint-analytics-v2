@@ -4,10 +4,10 @@
   "position": {
     "x": 40,
     "y": 130,
-    "z": 10,
+    "z": 2000,
     "height": 150,
-    "width": 280,
-    "tabOrder": 10
+    "width": 352,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,13 +23,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Fraud Complaints"
+                  "Property": "Fraud Current Annualized"
                 }
               },
-              "queryRef": "_Measures.Fraud Complaints",
-              "nativeQueryRef": "Fraud Complaints",
-              "displayName": "Fraud complaints (all years)",
-              "format": "#,0"
+              "queryRef": "_Measures.Fraud Current Annualized",
+              "nativeQueryRef": "Fraud Current Annualized",
+              "displayName": "Fraud complaints, 2026 (projected)"
             }
           ]
         }
@@ -54,20 +53,6 @@
               "expr": {
                 "Literal": {
                   "Value": "30D"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
                 }
               }
             }

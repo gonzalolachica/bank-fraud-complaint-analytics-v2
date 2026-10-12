@@ -19,6 +19,15 @@ SELECT
     c.company_response_to_consumer AS company_response,
     c.timely_response,
     c.submitted_via,
+    
+    -- Fraud type: allow-list label when one matched; complaints flagged only
+    -- by the Money Transfer product path get the transparent catch-all label.
+    -- Non-fraud complaints have no fraud type (NULL).
+    CASE
+        WHEN i.is_fraud_related
+          OR p.product_group = 'Money Transfer / Virtual Currency'
+        THEN COALESCE(i.fraud_type, 'Money transfer - other (not clearly fraud)')
+    END AS fraud_type,
 
     -- Relief flags: the business rules for "closed" and "relief" live here, once.
     -- DAX measures count these flags and never re-type the response strings.

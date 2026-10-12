@@ -97,6 +97,20 @@ table _Measures
 		formatString: 0.0
 		lineageTag: fd16c258-3016-472b-91f8-06270aee05c1
 
+	measure 'Fraud Complaints (Annualized CY)' =
+			
+			VAR cy     = [Current Year]
+			VAR yr     = SELECTEDVALUE ( dim_date[year] )
+			VAR actual = [Fraud Complaints]
+			RETURN
+			    IF (
+			        yr = cy,
+			        DIVIDE ( actual * 365, [Days Elapsed] ),
+			        actual
+			    )
+		formatString: 0
+		lineageTag: 3ab8884a-4a81-4978-95a3-0984c849aaec
+
 	partition _Measures = m
 		mode: import
 		source =

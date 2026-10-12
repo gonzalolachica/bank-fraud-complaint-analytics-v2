@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "kpi0000000000000003",
   "position": {
-    "x": 640,
+    "x": 784,
     "y": 130,
-    "z": 12,
+    "z": 2000,
     "height": 150,
-    "width": 280,
-    "tabOrder": 12
+    "width": 352,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Fraud Relief Rate"
+                  "Property": "Fraud Share"
                 }
               },
-              "queryRef": "_Measures.Fraud Relief Rate",
-              "nativeQueryRef": "Fraud Relief Rate",
-              "displayName": "Closed fraud complaints with any relief"
+              "queryRef": "_Measures.Fraud Share",
+              "nativeQueryRef": "Fraud Share",
+              "displayName": "Fraud share of all complaints"
             }
           ]
         }

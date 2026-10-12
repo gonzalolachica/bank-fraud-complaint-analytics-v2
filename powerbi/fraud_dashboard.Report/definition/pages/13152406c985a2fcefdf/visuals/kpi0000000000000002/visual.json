@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "kpi0000000000000002",
   "position": {
-    "x": 340,
+    "x": 412,
     "y": 130,
-    "z": 11,
+    "z": 2000,
     "height": 150,
-    "width": 280,
-    "tabOrder": 11
+    "width": 352,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Fraud Share"
+                  "Property": "Fraud YoY %"
                 }
               },
-              "queryRef": "_Measures.Fraud Share",
-              "nativeQueryRef": "Fraud Share",
-              "displayName": "Fraud share of all complaints"
+              "queryRef": "_Measures.Fraud YoY %",
+              "nativeQueryRef": "Fraud YoY %",
+              "displayName": "Change vs 2025"
             }
           ]
         }

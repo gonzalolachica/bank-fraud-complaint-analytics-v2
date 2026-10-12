@@ -1,0 +1,171 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "act0000000000000001",
+  "position": {
+    "x": 1260,
+    "y": 600,
+    "z": 103,
+    "height": 440,
+    "width": 620,
+    "tabOrder": 103
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "WHAT TO DO",
+                    "textStyle": {
+                      "color": "#B4400F",
+                      "fontSize": "14pt",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. Review identity-theft handling at Truist. ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Relief on 3.8% of complaints vs ~29\u201332% at peers, who mostly fix accounts and credit reports rather than refund.",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "6pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. Track fraud per $10B of deposits every quarter. ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Truist crossed Chase in 2026; flag it if the gap keeps widening.",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "6pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. Treat scams as an industry-wide gap. ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Few scam complaints get relief at any bank, so prevention and customer warnings matter more than refunds.",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "11pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#111111",
+                      "fontSize": "6pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Caveats: complaints show customer pain, not fraud losses. Some fraud-type counts are small, especially for Amex.",
+                    "textStyle": {
+                      "color": "#4A4A4A",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

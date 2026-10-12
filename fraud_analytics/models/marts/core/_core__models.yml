@@ -63,6 +63,22 @@ models:
         data_type: boolean
         description: "TRUE if product_group = 'Money Transfer / Virtual Currency' OR the issue pair is on the fraud allow-list."
 
+      - name: fraud_type
+        data_type: text
+        description: "Fraud typology. Allow-list label when matched; 'Money transfer - other (not clearly fraud)' for complaints flagged only by the Money Transfer product path; NULL when not fraud."
+        data_tests:
+          - not_null:
+              config:
+                where: "is_fraud_complaint"
+          - accepted_values:
+              arguments:
+                values:
+                  - "Identity theft / new account"
+                  - "Unauthorized transactions"
+                  - "Scams"
+                  - "Fraud alerts / freezes"
+                  - "Money transfer - other (not clearly fraud)"
+                  
       - name: company_response
         data_type: text
         description: "Company's response to the consumer."

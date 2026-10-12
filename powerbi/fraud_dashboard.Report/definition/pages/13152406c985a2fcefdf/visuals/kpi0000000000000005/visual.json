@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "kpi0000000000000005",
   "position": {
-    "x": 1240,
+    "x": 1528,
     "y": 130,
-    "z": 14,
+    "z": 2000,
     "height": 150,
-    "width": 280,
-    "tabOrder": 14
+    "width": 352,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Data Cutoff Date"
+                  "Property": "Fraud Monetary Relief Rate"
                 }
               },
-              "queryRef": "_Measures.Data Cutoff Date",
-              "nativeQueryRef": "Data Cutoff Date",
-              "displayName": "Data through"
+              "queryRef": "_Measures.Fraud Monetary Relief Rate",
+              "nativeQueryRef": "Fraud Monetary Relief Rate",
+              "displayName": "Money back rate (closed)"
             }
           ]
         }

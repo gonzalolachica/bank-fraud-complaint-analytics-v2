@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "kpi0000000000000004",
   "position": {
-    "x": 940,
+    "x": 1156,
     "y": 130,
-    "z": 13,
+    "z": 2000,
     "height": 150,
-    "width": 280,
-    "tabOrder": 13
+    "width": 352,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,12 +23,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Fraud YoY %"
+                  "Property": "Fraud Relief Rate"
                 }
               },
-              "queryRef": "_Measures.Fraud YoY %",
-              "nativeQueryRef": "Fraud YoY %",
-              "displayName": "Fraud YoY (current year annualized)"
+              "queryRef": "_Measures.Fraud Relief Rate",
+              "nativeQueryRef": "Fraud Relief Rate",
+              "displayName": "Fraud relief rate (closed)"
             }
           ]
         }

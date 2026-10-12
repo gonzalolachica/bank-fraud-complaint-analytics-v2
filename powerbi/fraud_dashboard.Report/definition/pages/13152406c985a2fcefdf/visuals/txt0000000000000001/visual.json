@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "txt0000000000000001",
   "position": {
     "x": 980,
     "y": 700,
-    "z": 33,
+    "z": 10000,
     "height": 340,
     "width": 900,
-    "tabOrder": 33
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,11 +19,18 @@
               {
                 "textRuns": [
                   {
+                    "value": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
                     "value": "WHAT THE DATA SAYS",
                     "textStyle": {
-                      "fontSize": "12pt",
                       "fontWeight": "bold",
-                      "color": "#B4400F"
+                      "fontSize": "14pt",
+                      "textDecoration": "underline",
+                      "color": "#b4400f"
                     }
                   }
                 ]
@@ -31,11 +38,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Adjusted for size, Truist overtook Chase in 2026: 14.8 vs 12.7 fraud complaints per $10B of deposits (2025: 12.2 vs 13.8).",
+                    "value": "14.8 vs 12.7",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "fontWeight": "normal",
-                      "color": "#111111"
+                      "fontWeight": "bold"
                     }
                   }
                 ]
@@ -43,11 +48,39 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Truist fraud complaints are on pace for +20.7% year over year, while the three-bank total falls 3.6%.",
+                    "value": " Adjusted for size, Truist now gets more fraud complaints per $10B of deposits than Chase. A year ago it was the reverse (12.2 vs 13.8)."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "So what",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "fontWeight": "normal",
-                      "color": "#111111"
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "value": ": Truist’s fraud pressure is growing faster than the bank itself."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "+24.2%",
+                    "textStyle": {
+                      "fontWeight": "bold"
                     }
                   }
                 ]
@@ -55,12 +88,63 @@
               {
                 "textRuns": [
                   {
-                    "value": "• Amex gives some relief on 30.3% of closed fraud complaints but money back on only 4.5%: most of its fraud is identity theft, fixed without refunds.",
+                    "value": " Truist’s growth holds even under a strict fraud definition, which excludes money-transfer service complaints. Identity theft leads it (+35.5%)."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "So what",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "fontWeight": "normal",
-                      "color": "#111111"
+                      "fontStyle": "italic"
                     }
+                  },
+                  {
+                    "value": ": this is real fraud growth, not a definition artifact."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3.8%",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " Truist gives any relief on just 3.8% of identity-theft complaints, vs about 29% at Chase and 32% at Amex."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "So what:",
+                    "textStyle": {
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "value": " the biggest gap in the data, and the most fixable."
                   }
                 ]
               },
@@ -70,7 +154,6 @@
                     "value": " ",
                     "textStyle": {
                       "fontSize": "8pt",
-                      "fontWeight": "normal",
                       "color": "#111111"
                     }
                   }
@@ -79,24 +162,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "METHOD",
+                    "value": "Method:",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "fontWeight": "bold",
-                      "color": "#B4400F"
+                      "fontWeight": "bold"
                     }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
+                  },
                   {
-                    "value": "Fraud = CFPB issue/sub-issue allow-list (version-controlled dbt seed). Current year annualized = year-to-date × 365 ÷ days elapsed to the data cutoff. Deposits = period-end 6/30/2026 from SEC filings; both years divided by the same deposit base. Amex excluded from the size-normalized view because deposits understate a card issuer's customer base.",
-                    "textStyle": {
-                      "fontSize": "10pt",
-                      "fontWeight": "normal",
-                      "color": "#4A4A4A"
-                    }
+                    "value": " CFPB complaints, 2020 to Sep 2026. 2026 is projected to a full year. Deposits from bank SEC filings (June 2026). Complaints show customer pain, not actual fraud losses."
                   }
                 ]
               }
