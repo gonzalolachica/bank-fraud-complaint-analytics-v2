@@ -19,7 +19,7 @@ Chase receives far more fraud complaints than Truist, but it also holds about 6.
 | Truist | 12.2 | **14.8** |
 
 **2. Truist's increase is real fraud, not noise in the definition.**
-Even after removing the borderline category (money-transfer complaints that aren't clearly fraud), Truist's fraud complaints are on pace to grow **24%** this year. Identity-theft complaints lead the rise (+35%).
+Even after removing the borderline category (money-transfer complaints that aren't clearly fraud), Truist's fraud complaints are on pace to grow **24%** this year. Identity-theft complaints add the most to that increase (+35%, the largest jump of any type), although unauthorized transactions are still Truist's largest fraud category overall.
 
 **3. Identity-theft victims at Truist rarely get help.**
 Of closed identity-theft complaints, **3.8%** at Truist ended with some kind of relief. At Chase it was about 29%, at Amex about 32%.
