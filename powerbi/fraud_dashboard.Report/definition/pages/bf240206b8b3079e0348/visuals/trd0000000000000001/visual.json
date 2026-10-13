@@ -256,7 +256,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Is fraud growing faster than complaints overall? Bars: fraud complaints per year (2026 projected, orange). Line: fraud share'"
+                  "Value": "'Is fraud growing faster than complaints overall? Bars: fraud complaints per year (2026 projected, red). Line: fraud share'"
                 }
               }
             },
