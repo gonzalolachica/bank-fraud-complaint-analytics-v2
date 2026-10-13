@@ -334,7 +334,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Monthly fraud complaints vs. their normal range. Orange bars = alert months (above the dashed threshold)'"
+                  "Value": "'Monthly fraud complaints vs. their normal range. Red bars = alert months (above the dashed threshold)'"
                 }
               }
             },
