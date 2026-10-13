@@ -20,7 +20,6 @@ profiles.yml
 .vscode/
 Thumbs.db
 
-*.pbix
 
 
 # Power BI: never commit data or machine settings

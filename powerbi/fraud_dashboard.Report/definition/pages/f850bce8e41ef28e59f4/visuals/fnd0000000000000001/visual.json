@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "fnd0000000000000001",
   "position": {
-    "x": 760,
-    "y": 790,
+    "x": 784,
+    "y": 800,
     "z": 310,
-    "height": 250,
-    "width": 1120,
+    "height": 256,
+    "width": 1088,
     "tabOrder": 310
   },
   "visual": {
@@ -21,9 +21,9 @@
                   {
                     "value": "WHAT IT FOUND",
                     "textStyle": {
-                      "color": "#B4400F",
+                      "fontWeight": "bold",
                       "fontSize": "12pt",
-                      "fontWeight": "bold"
+                      "color": "#2f3e4e"
                     }
                   }
                 ]
@@ -31,10 +31,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\u2022 Truist broke its normal range 7 times since 2021, twice in the last 12 complete months (Sep 2025, Jan 2026), in step with its 2026 rise.",
+                    "value": "• Truist broke its normal range 7 times since 2021, twice in the last 12 complete months (Sep 2025, Jan 2026), in step with its 2026 rise.",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt"
+                      "fontSize": "11pt",
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -42,10 +42,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\u2022 January 2025 is the biggest spike in the data: 792 fraud complaints, 703 of them at Chase. Truist also flagged that month.",
+                    "value": "• January 2025 is the biggest spike in the data: 792 fraud complaints, 703 of them at Chase. Truist also flagged that month.",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt"
+                      "fontSize": "11pt",
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -55,8 +55,8 @@
                   {
                     "value": " ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "6pt"
+                      "fontSize": "6pt",
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -66,9 +66,9 @@
                   {
                     "value": "CAVEATS",
                     "textStyle": {
-                      "color": "#B4400F",
+                      "fontWeight": "bold",
                       "fontSize": "12pt",
-                      "fontWeight": "bold"
+                      "color": "#2f3e4e"
                     }
                   }
                 ]
@@ -76,10 +76,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\u2022 Small numbers: Truist gets roughly 40 to 50 fraud complaints a month, so random swings are large. An alert is a prompt to investigate, not proof.",
+                    "value": "• Small numbers: Truist gets roughly 40 to 50 fraud complaints a month, so random swings are large. An alert is a prompt to investigate, not proof.",
                     "textStyle": {
-                      "color": "#4A4A4A",
-                      "fontSize": "10pt"
+                      "fontSize": "10pt",
+                      "color": "#4d545c"
                     }
                   }
                 ]
@@ -87,10 +87,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\u2022 A spike raises the next 12 months of baseline (Jan 2025 widened the 2025\u201326 band), so later spikes are harder to flag.",
+                    "value": "• A spike raises the next 12 months of baseline (Jan 2025 widened the 2025–26 band), so later spikes are harder to flag.",
                     "textStyle": {
-                      "color": "#4A4A4A",
-                      "fontSize": "10pt"
+                      "fontSize": "10pt",
+                      "color": "#4d545c"
                     }
                   }
                 ]
@@ -98,10 +98,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\u2022 Complaints show customer pain, not fraud losses.",
+                    "value": "• Complaints show customer pain, not fraud losses.",
                     "textStyle": {
-                      "color": "#4A4A4A",
-                      "fontSize": "10pt"
+                      "fontSize": "10pt",
+                      "color": "#4d545c"
                     }
                   }
                 ]
@@ -126,8 +126,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#FFFFFF'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }

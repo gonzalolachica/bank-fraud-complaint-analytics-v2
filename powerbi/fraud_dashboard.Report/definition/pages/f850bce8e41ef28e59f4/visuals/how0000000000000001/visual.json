@@ -21,9 +21,9 @@
                   {
                     "value": "HOW ALERTS WORK",
                     "textStyle": {
-                      "color": "#B4400F",
+                      "fontWeight": "bold",
                       "fontSize": "12pt",
-                      "fontWeight": "bold"
+                      "color": "#2F3E4E"
                     }
                   }
                 ]
@@ -33,23 +33,23 @@
                   {
                     "value": "Each month is compared with the 12 months before it. A month is an ",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt"
+                      "fontSize": "11pt",
+                      "color": "#111418"
                     }
                   },
                   {
                     "value": "alert",
                     "textStyle": {
-                      "color": "#111111",
+                      "fontWeight": "bold",
                       "fontSize": "11pt",
-                      "fontWeight": "bold"
+                      "color": "#111418"
                     }
                   },
                   {
                     "value": " when its fraud complaints are more than 2 standard deviations above that 12-month average. Only complete months are judged. Pick a bank above: each bank is judged against its own normal, not against the others.",
                     "textStyle": {
-                      "color": "#111111",
-                      "fontSize": "11pt"
+                      "fontSize": "11pt",
+                      "color": "#111418"
                     }
                   }
                 ]

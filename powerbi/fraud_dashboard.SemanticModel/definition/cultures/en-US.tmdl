@@ -6821,6 +6821,124 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
+			          "company short": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "company_short": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "co short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "corp short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "corporation short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "corps short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "employer short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "enterprise short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "business short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "group short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "conglomerate short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "co inc short": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.486
+			          }
+			        },
+			        {
 			          "Bank": {
 			            "State": "Suggested",
 			            "Source": {
@@ -6831,98 +6949,538 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    }
-			  },
-			  "Relationships": {
-			    "fct_complaint_has_dim_company": {
-			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
+			    },
+			    "entity__measure.fraud_alert_months": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Alert Months"
 			        }
 			      },
-			      "Phrasings": [
+			      "State": "Generated",
+			      "Terms": [
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_complaint"
-			            },
-			            "Object": {
-			              "Role": "dim_company"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_dim_companies"
+			          "fraud alert months": {
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_company"
+			          "alert months": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "Alert months since 2021": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
 			            },
-			            "Object": {
-			              "Role": "fct_complaint"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_companies_have_fct_complaints"
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
-			    "fct_complaint_has_dim_date": {
+			    "entity__measure.fraud_alert_months_last_12M": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Alert Months (Last 12M)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud alert months (last 12M)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Alerts in the last 12 complete months": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.fraud_alert_above_threshold": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Alert (Above Threshold)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud alert (above threshold)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Alert month": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.fraud_alert_excess_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Alert Excess %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud alert excess %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fraud alert excess percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "fraud alert excess pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.fraud_monthly_complete_months": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Monthly (Complete Months)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud monthly (complete months)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Fraud complaints": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.fraud_alert_threshold_upper": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Alert Threshold (Upper)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud alert threshold (upper)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Alert threshold": {
+			            "State": "Generated",
+			            "Weight": 0.675
+			          }
+			        },
+			        {
+			          "Alert threshold (avg + 2 SD)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.fraud_band_lower": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Band (Lower)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud band (lower)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Lower band": {
+			            "State": "Generated",
+			            "Weight": 0.675
+			          }
+			        },
+			        {
+			          "Lower band (avg - 2 SD)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.month_start": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_date",
+			          "ConceptualProperty": "month_start"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month start": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month_start": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "start": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "mth start": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "month twitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "month jump": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "month jerk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "month flinch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "month jolt": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "twitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "jump": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "jerk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "flinch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Month": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "entity__measure.fraud_baseline_prior_12M_avg": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Baseline (Prior 12M Avg)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud baseline (prior 12M avg)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fraud baseline": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.fraud_baseline_SD_prior_12M": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Fraud Baseline SD (Prior 12M)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fraud baseline SD (prior 12M)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fraud baseline SD": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "dim_date_has_entity__measure_fraud_alert_above_threshold": {
 			      "Binding": {
-			        "ConceptualEntity": "fct_complaints"
+			        "ConceptualEntity": "dim_date"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fct_complaint": {
-			          "Target": {
-			            "Entity": "fct_complaint"
-			          }
-			        },
 			        "dim_date": {
 			          "Target": {
 			            "Entity": "dim_date"
 			          }
+			        },
+			        "entity__measure.fraud_alert_above_threshold": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_above_threshold"
+			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fct_complaint"
+			              "Role": "dim_date"
 			            },
 			            "Object": {
-			              "Role": "dim_date"
+			              "Role": "entity__measure.fraud_alert_above_threshold"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fct_complaints_have_dim_dates"
+			          "ID": "dim_dates_have_fraud_alert_above_threshold"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_alert_months_last_12M": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
 			        },
+			        "entity__measure.fraud_alert_months_last_12M": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_months_last_12M"
+			          }
+			        }
+			      },
+			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_date"
 			            },
 			            "Object": {
-			              "Role": "fct_complaint"
+			              "Role": "entity__measure.fraud_alert_months_last_12M"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_fct_complaints"
+			          "ID": "dim_dates_have_fraud_alert_months_last_12M"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_alert_months": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.fraud_alert_months": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_months"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_alert_months"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fraud_alert_months"
+			        }
+			      ]
+			    },
+			    "dim_company_has_company_short": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_company"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_company": {
+			          "Target": {
+			            "Entity": "dim_company"
+			          }
+			        },
+			        "dim_company.company_short": {
+			          "Target": {
+			            "Entity": "dim_company.company_short"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_company"
+			            },
+			            "Object": {
+			              "Role": "dim_company.company_short"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_companies_have_company_shorts"
 			        }
 			      ]
 			    },
@@ -9239,6 +9797,560 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_fct_complaints_are_closed_fct_complaints"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_alert_above_threshold": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_alert_above_threshold": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_above_threshold"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_alert_above_threshold"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_alert_above_threshold"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_alert_excess_": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.fraud_alert_excess_": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_excess_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_alert_excess_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fraud_alert_excess_"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_alert_excess_": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_alert_excess_": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_excess_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_alert_excess_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_alert_excess_"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_monthly_complete_months": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.fraud_monthly_complete_months": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_monthly_complete_months"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_monthly_complete_months"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fraud_monthly_complete_months"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_monthly_complete_months": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_monthly_complete_months": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_monthly_complete_months"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_monthly_complete_months"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_monthly_complete_months"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_alert_threshold_upper": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.fraud_alert_threshold_upper": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_threshold_upper"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_alert_threshold_upper"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fraud_alert_threshold_upper"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_alert_threshold_upper": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_alert_threshold_upper": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_alert_threshold_upper"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_alert_threshold_upper"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_alert_threshold_upper"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_band_lower": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.fraud_band_lower": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_band_lower"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_band_lower"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fraud_band_lower"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_band_lower": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_band_lower": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_band_lower"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_band_lower"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_band_lower"
+			        }
+			      ]
+			    },
+			    "dim_date_has_month_start": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.month_start": {
+			          "Target": {
+			            "Entity": "dim_date.month_start"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.month_start"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_month_starts"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_baseline_prior_12M_avg": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.fraud_baseline_prior_12M_avg": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_baseline_prior_12M_avg"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_baseline_prior_12M_avg"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fraud_baseline_prior_12M_avg"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_baseline_prior_12M_avg": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_baseline_prior_12M_avg": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_baseline_prior_12M_avg"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_baseline_prior_12M_avg"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_baseline_prior_12M_avg"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_fraud_baseline_SD_prior_12M": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.fraud_baseline_SD_prior_12M": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_baseline_SD_prior_12M"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_baseline_SD_prior_12M"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fraud_baseline_SD_prior_12M"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_entity__measure_fraud_baseline_SD_prior_12M": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "entity__measure.fraud_baseline_SD_prior_12M": {
+			          "Target": {
+			            "Entity": "entity__measure.fraud_baseline_SD_prior_12M"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.fraud_baseline_SD_prior_12M"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_fraud_baseline_SD_prior_12M"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fct_complaints"
+			        }
+			      ]
+			    },
+			    "fct_complaint_has_dim_company": {
+			      "Binding": {
+			        "ConceptualEntity": "fct_complaints"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_complaint": {
+			          "Target": {
+			            "Entity": "fct_complaint"
+			          }
+			        },
+			        "dim_company": {
+			          "Target": {
+			            "Entity": "dim_company"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_complaint"
+			            },
+			            "Object": {
+			              "Role": "dim_company"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_complaints_have_dim_companies"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_company"
+			            },
+			            "Object": {
+			              "Role": "fct_complaint"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_companies_have_fct_complaints"
 			        }
 			      ]
 			    },

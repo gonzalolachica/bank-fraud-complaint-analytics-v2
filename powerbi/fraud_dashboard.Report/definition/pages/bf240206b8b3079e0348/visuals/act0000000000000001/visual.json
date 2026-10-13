@@ -38,8 +38,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "14pt",
-                      "textDecoration": "underline",
-                      "color": "#b4400f"
+                      "textDecoration": "underline"
                     }
                   }
                 ],
@@ -58,13 +57,13 @@
                     "value": "1. Review identity-theft handling at Truist. ",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   },
                   {
                     "value": "Relief on 3.8% of complaints vs ~29–32% at peers, who mostly fix accounts and credit reports rather than refund.",
                     "textStyle": {
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -74,7 +73,7 @@
                   {
                     "value": " ",
                     "textStyle": {
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -85,13 +84,13 @@
                     "value": "2. Track fraud per $10B of deposits every quarter. ",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   },
                   {
                     "value": "Truist crossed Chase in 2026; flag it if the gap keeps widening.",
                     "textStyle": {
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -101,7 +100,7 @@
                   {
                     "value": " ",
                     "textStyle": {
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -112,13 +111,13 @@
                     "value": "3. Treat scams as an industry-wide gap. ",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   },
                   {
                     "value": "Few scam complaints get relief at any bank, so prevention and customer warnings matter more than refunds.",
                     "textStyle": {
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -129,7 +128,7 @@
                     "value": " ",
                     "textStyle": {
                       "fontSize": "6pt",
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   }
                 ]
@@ -140,7 +139,7 @@
                     "value": "Caveats: complaints show customer pain, not fraud losses. Some fraud-type counts are small, especially for Amex.",
                     "textStyle": {
                       "fontSize": "9pt",
-                      "color": "#4a4a4a"
+                      "color": "#4D545C"
                     }
                   }
                 ]

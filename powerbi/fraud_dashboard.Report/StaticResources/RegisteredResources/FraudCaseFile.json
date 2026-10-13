@@ -1,36 +1,36 @@
 {
   "name": "Fraud Case File",
   "dataColors": [
-    "#9A9A9A",
-    "#B4400F",
-    "#1F4E79",
-    "#8FB3D9",
-    "#5A5A5A",
-    "#D9D9D9"
+    "#9AA0A6",
+    "#B3123E",
+    "#2F3E4E",
+    "#A9B6C3",
+    "#5F6670",
+    "#D5D8DC"
   ],
   "background": "#FFFFFF",
-  "foreground": "#111111",
-  "tableAccent": "#B4400F",
+  "foreground": "#111418",
+  "tableAccent": "#B3123E",
   "textClasses": {
     "callout": {
       "fontSize": 30,
       "fontFace": "Segoe UI Semibold",
-      "color": "#111111"
+      "color": "#111418"
     },
     "title": {
       "fontSize": 13,
       "fontFace": "Segoe UI Semibold",
-      "color": "#111111"
+      "color": "#111418"
     },
     "header": {
       "fontSize": 12,
       "fontFace": "Segoe UI Semibold",
-      "color": "#111111"
+      "color": "#111418"
     },
     "label": {
       "fontSize": 11,
       "fontFace": "Segoe UI",
-      "color": "#4A4A4A"
+      "color": "#4D545C"
     }
   },
   "visualStyles": {
@@ -40,7 +40,7 @@
           {
             "color": {
               "solid": {
-                "color": "#EEEBE5"
+                "color": "#F4F4F2"
               }
             },
             "transparency": 0

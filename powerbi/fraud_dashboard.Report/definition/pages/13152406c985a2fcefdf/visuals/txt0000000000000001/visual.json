@@ -19,9 +19,17 @@
               {
                 "textRuns": [
                   {
-                    "value": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+                    "value": "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
                     "textStyle": {
-                      "fontSize": "14pt"
+                      "fontSize": "14pt",
+                      "color": "#2F3E4E"
+                    }
+                  },
+                  {
+                    "value": "\t\t",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#B3123E"
                     }
                   },
                   {
@@ -30,7 +38,7 @@
                       "fontWeight": "bold",
                       "fontSize": "14pt",
                       "textDecoration": "underline",
-                      "color": "#b4400f"
+                      "color": "#B3123E"
                     }
                   }
                 ]
@@ -154,7 +162,7 @@
                     "value": " ",
                     "textStyle": {
                       "fontSize": "8pt",
-                      "color": "#111111"
+                      "color": "#111418"
                     }
                   }
                 ]

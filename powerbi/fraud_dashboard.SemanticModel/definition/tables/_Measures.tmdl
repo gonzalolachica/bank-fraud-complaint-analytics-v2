@@ -197,7 +197,7 @@ table _Measures
 		lineageTag: 774502c3-fdd6-4706-b9ae-52a2117a1629
 
 	measure 'Fraud Alert Excess %' =
-
+			
 			VAR alertN = [Fraud Alert (Above Threshold)]
 			VAR upper  = [Fraud Alert Threshold (Upper)]
 			RETURN
@@ -206,7 +206,7 @@ table _Measures
 		lineageTag: 93e84455-134a-4383-8cfe-73be248099a3
 
 	measure 'Fraud Alert Months (Last 12M)' =
-
+			
 			VAR lastComplete = EOMONTH ( [Data Cutoff Date], -1 )
 			VAR firstMonth   = EDATE ( DATE ( YEAR ( lastComplete ), MONTH ( lastComplete ), 1 ), -11 )
 			VAR window12 =

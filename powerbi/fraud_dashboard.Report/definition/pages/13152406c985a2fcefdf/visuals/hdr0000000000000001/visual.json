@@ -19,11 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "FRAUD & SCAM COMPLAINTS  \u00b7  CHASE  \u00b7  TRUIST  \u00b7  AMEX",
+                    "value": "FRAUD & SCAM COMPLAINTS  ·  CHASE  ·  TRUIST  ·  AMEX",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "26pt",
-                      "color": "#000000"
+                      "color": "#111418"
                     }
                   }
                 ],
@@ -32,10 +32,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "CFPB consumer complaints, 2020 to latest data  \u00b7  Focus bank: Truist (orange)  \u00b7  Page 1 of 3: Performance & Comparison",
+                    "value": "CFPB consumer complaints, 2020 to latest data  ·  Focus bank: Truist (orange)  ·  Page 1 of 3: Performance & Comparison",
                     "textStyle": {
+                      "fontStyle": "italic",
                       "fontSize": "12pt",
-                      "color": "#000000"
+                      "color": "#111418"
                     }
                   }
                 ],
@@ -62,7 +63,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EEEBE5'"
+                      "Value": "'#F4F4F2'"
                     }
                   }
                 }
