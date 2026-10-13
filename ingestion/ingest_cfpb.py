@@ -12,10 +12,13 @@ Safety rules:
   * The table is never dropped (dbt views depend on it). It is emptied and refilled
     inside ONE transaction: if the load fails, the old data stays.
   * Column names and types match the existing table (14 text columns + bigint id).
-  * The database password is typed in at run time and never stored in a file.
+  * Connection settings come from environment variables (SUPABASE_HOST, SUPABASE_USER).
+    The password is read from SUPABASE_PASSWORD if set, otherwise typed in at run time.
+    Nothing secret is stored in this file.
 """
 import argparse
 import getpass
+import os
 import sys
 from datetime import date
 from io import StringIO
@@ -47,10 +50,21 @@ HEADERS = {
 FIRST_YEAR = 2020
 EXPORT_CAP = 100_000  # CFPB caps filtered exports at 100k rows (Release 23, Jul 2026)
 
+def _require_env(name: str) -> str:
+    """Read a required setting from the environment, or stop with a clear message."""
+    value = os.environ.get(name)
+    if not value:
+        raise SystemExit(
+            f"Missing environment variable {name}. "
+            f"Set it first (see README: 'Configuration')."
+        )
+    return value
+
+
 DB = dict(
-    host="aws-0-us-east-1.pooler.supabase.com",
+    host=_require_env("SUPABASE_HOST"),
     port=5432,
-    username="postgres.wzmciexafinrhmelabnk",
+    username=_require_env("SUPABASE_USER"),
     database="postgres",
 )
 SCHEMA, TABLE = "public", "stg_complaints_raw"
@@ -143,7 +157,7 @@ def validate(df):
 
 # --- 4. Load (empty + refill in ONE transaction) --------------------------------
 def load(df):
-    password = getpass.getpass("\nSupabase database password: ")
+    password = os.environ.get("SUPABASE_PASSWORD") or getpass.getpass("\nSupabase database password: ")
     engine = create_engine(URL.create("postgresql+psycopg2", password=password, **DB))
 
     dtypes = {c: Text() for c in COLUMNS}
