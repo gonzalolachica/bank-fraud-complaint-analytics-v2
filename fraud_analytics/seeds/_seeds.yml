@@ -13,6 +13,11 @@ seeds:
         description: "Natural key — fct_complaints joins on this, so it must be unique."
         data_tests:
           - unique
+      - name: company_short
+        description: "Short name for the company."
+        data_tests:
+          - unique
+          - not_null
 
   - name: dim_product
     description: "CFPB product -> product_group mapping (hand-maintained seed)."
@@ -45,3 +50,5 @@ seeds:
               arguments:
                 to: ref('dim_company')
                 field: company_name
+
+  
